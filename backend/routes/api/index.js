@@ -4,6 +4,7 @@ router.post('/test', function(req, res) {
   res.json({ requestBody: req.body });
 });
 
+//TESTING FOR USER AUTH
 // // GET /api/set-token-cookie http://localhost:5000/api/set-token-cookie
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie } = require('../../utils/auth.js');
