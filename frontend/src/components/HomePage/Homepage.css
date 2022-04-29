@@ -1,0 +1,17 @@
+.splash-button {
+  width: 100%;
+}
+
+.space {
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.splash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 5%;
+}

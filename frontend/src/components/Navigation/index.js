@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
+import HomePage from '../HomePage';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
@@ -40,6 +41,7 @@ function Navigation({ isLoaded }){
           </div>
         </div>
       </div>
+        <HomePage />
     </div>
   );
 }

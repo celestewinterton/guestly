@@ -1,7 +1,11 @@
-/* TODO Add site wide styles */
 html, body, input, textarea, button, select, a {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
+}
+
+h1, h2, h3 {
+  color: #004D4D;
+  font-size: 1.8em;
 }
 
 body {
@@ -57,9 +61,9 @@ main {
 /* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
 form {
   flex: 0 0 400px;
-  width: 300px;
+  width: 290px;
   background-color: #f8f2ee;
-  padding: 20px;
+  padding: 40px;
   margin: 20px;
 }
 
