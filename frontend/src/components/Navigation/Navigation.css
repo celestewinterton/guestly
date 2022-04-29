@@ -12,3 +12,15 @@
   color: teal;
   background: none;
 }
+
+/* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
+.navbar {
+  background-color: #f8f2ee89;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px;
+}

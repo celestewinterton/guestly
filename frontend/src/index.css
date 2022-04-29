@@ -5,29 +5,49 @@ html, body, input, textarea, button, select, a {
 }
 
 body {
-  background: url(../public/images/placement.jpeg) no-repeat center center fixed;
+  background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+/* placement.jpeg */
+
+.overlay {
+  background-color: #f8f2eec1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
 }
 
 ul {
   list-style-type: none;
 }
 
+.button,
 button {
   border: 0;
-  background: rgba(0, 128, 128, 0.2);
+  background: transparent;
   font-weight: 700;
   padding: .5em 1em;
   transition: background-color .25s, color .25s;
-  margin: .25em .25em .25em 0em;
+  margin: .5em .5em .5em 0em;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
+.button:hover,
 button:hover {
-  background-color: teal;
-  color: white;
+  /* background-color: teal; */
+  text-decoration: underline;
+  text-decoration-color: teal;
+  text-decoration-thickness: 2px;
+  /* border: 2px solid teal; */
+  /* color: white; */
 }
 
 main {
@@ -42,8 +62,9 @@ main {
 form {
   flex: 0 0 400px;
   width: 300px;
-  background-color: #f8f2eeb3;
+  background-color: #f8f2ee;
   padding: 20px;
+  margin: 20px;
 }
 
 h1 {
@@ -68,7 +89,8 @@ input {
 }
 
 input:focus {
-  background-color: rgba(204, 204, 204, 0.2);
+  /* background-color: #f8f2eecc; */
+  border-bottom: 2px solid #CCC;
 }
 
 nav {
@@ -99,4 +121,11 @@ select {
 }
 
 @media screen and (max-height: 800px) {
+}
+
+/* mobile */
+@media screen and (max-width: 560px) {
+  /* button {
+    background-color: red;
+  } */
 }
