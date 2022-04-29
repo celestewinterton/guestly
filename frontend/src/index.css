@@ -27,27 +27,21 @@ ul {
   list-style-type: none;
 }
 
-.button,
 button {
   border: 0;
-  background: transparent;
+  background: #6EA3A3;
   font-weight: 700;
   padding: .5em 1em;
   transition: background-color .25s, color .25s;
   margin: .5em .5em .5em 0em;
-  color: black;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
 }
 
-.button:hover,
 button:hover {
-  /* background-color: teal; */
-  text-decoration: underline;
-  text-decoration-color: teal;
-  text-decoration-thickness: 2px;
-  /* border: 2px solid teal; */
-  /* color: white; */
+  background-color: teal;
+  color: white;
 }
 
 main {
