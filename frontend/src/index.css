@@ -4,6 +4,18 @@ html, body, input, textarea, button, select, a {
   font-size: 16px;
 }
 
+body {
+  background: url(../public/images/placement.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+ul {
+  list-style-type: none;
+}
+
 button {
   border: 0;
   background: rgba(0, 128, 128, 0.2);
@@ -26,9 +38,12 @@ main {
   right: 0;
   top: 0;
 }
-
+/* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
 form {
   flex: 0 0 400px;
+  width: 300px;
+  background-color: #f8f2eeb3;
+  padding: 20px;
 }
 
 h1 {
@@ -47,7 +62,9 @@ input {
   outline: 0;
   padding: .25em .5em;
   margin: 0em .25em .25em 0em;
-  width: 40%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 input:focus {
