@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SeatingSetUp from "./components/SeatingSetUp"
+import SeatingConfig from "./components/SeatingConfig"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 
@@ -18,7 +18,7 @@ function App() {
       {isLoaded && (
         <Switch>
           <Route path="/test">
-            <SeatingSetUp />
+            <SeatingConfig />
           </Route>
         </Switch>
       )}
