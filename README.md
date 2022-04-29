@@ -46,7 +46,7 @@ Users can.............................
 ## Database Schema
 [Back to top](#table-of-contents)
 
-![Database Schema](./images/schema.JPG)
+![Database Schema](./frontend/public/images/schema.png)
 
 ## Future Features
 [Back to top](#table-of-contents)
