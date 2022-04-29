@@ -1,9 +1,19 @@
 # Guestly
 
-live site:
-https://seat-me-guestly.herokuapp.com/
+An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> where users can RSVP and select seating at their next wedding reception. For users planning their big day, this app is a one stop shop to view your guestlist and your seating arrangements. 
 
-# Technologies Used
+<a href="https://seat-me-guestly.herokuapp.com/" target="_blank"><strong>Explore the website »</strong></a>
+
+<details open="open">
+  <summary id="table-of-contents">Table of Contents</summary>
+  <ol>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#future-features">Future Features</a></li>
+  </ol>
+ </details>
+
+## Technologies Used
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -14,7 +24,7 @@ https://seat-me-guestly.herokuapp.com/
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
 
-# Getting started
+## Getting started
 
 1. Clone this repository
 
@@ -26,13 +36,21 @@ https://seat-me-guestly.herokuapp.com/
 5. TBD
 6. TBD
 
-# Features
+## Features
 
-## Splash Page & User Auth
+### Splash Page & User Auth
 
-Users can...
+Users can............................. 
 ![Splash Page](./path/to/image.JPG)
 
-# Database Schema
+## Database Schema
+[Back to top](#table-of-contents)
 
 ![Database Schema](./images/schema.JPG)
+
+## Future Features
+[Back to top](#table-of-contents)
+
+### Gift Registry 
+
+### Drag and Drop Visual Seating Configuration
