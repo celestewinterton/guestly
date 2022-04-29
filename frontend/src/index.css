@@ -1,1 +1,85 @@
 /* TODO Add site wide styles */
+html, body, input, textarea, button, select, a {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+button {
+  border: 0;
+  background: rgba(0, 128, 128, 0.2);
+  font-weight: 700;
+  padding: .5em 1em;
+  transition: background-color .25s, color .25s;
+  margin: .25em .25em .25em 0em;
+}
+
+button:hover {
+  background-color: teal;
+  color: white;
+}
+
+main {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+form {
+  flex: 0 0 400px;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+label {
+  color: #CCC;
+  font-size: 12px;
+}
+
+input {
+  border: 1px solid #CCC;
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: .25em .5em;
+  margin: 0em .25em .25em 0em;
+  width: 40%;
+}
+
+input:focus {
+  background-color: rgba(204, 204, 204, 0.2);
+}
+
+nav {
+  flex: 0 0 300px;
+  overflow-y: auto;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+select {
+  width: 100%;
+  margin-top: 10px;
+  padding-left: 4px;
+}
+
+.error {
+  color: red;
+  min-height: 24px;
+  min-width: 360px;
+  margin: 0 0 10px 0;
+  padding: 0 8px;
+}
+
+@media screen and (min-width: 1000px) {
+}
+
+@media screen and (max-height: 800px) {
+}
