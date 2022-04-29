@@ -27,6 +27,7 @@ ul {
   list-style-type: none;
 }
 
+.submit-button,
 form > button {
   border: 0;
   background: #6EA3A3;
@@ -39,6 +40,7 @@ form > button {
   border-radius: 5px;
 }
 
+.submit-button:hover,
 form > button:hover {
   background-color: teal;
   color: white;
@@ -122,4 +124,8 @@ select {
   /* button {
     background-color: red;
   } */
+}
+
+.grid {
+
 }

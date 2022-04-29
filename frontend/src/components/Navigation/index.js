@@ -25,12 +25,22 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <ul className='navbar'>
-      <li>
-        <NavLink className="nav-button" exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <div>
+      <div className='navbar'>
+        <div>
+          <div className='nav-left'>
+            <NavLink exact to="/">
+              <img className="logo" src='https://user-images.githubusercontent.com/96894806/165892193-ba3fa8d3-0774-432d-b2e2-f77c5950c748.png'></img>
+            </NavLink>
+            <NavLink className="nav-button guestly" exact to="/">Guestly</NavLink>
+          </div>
+          <div className='nav-right'>
+            <NavLink className="nav-button" exact to="/">Home</NavLink>
+            {isLoaded && sessionLinks}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

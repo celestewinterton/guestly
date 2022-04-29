@@ -21,8 +21,25 @@
   right: 0;
   margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   padding: 5px;
+  width: 100%;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-button {
