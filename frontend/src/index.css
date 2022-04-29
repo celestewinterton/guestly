@@ -27,7 +27,7 @@ ul {
   list-style-type: none;
 }
 
-button {
+form > button {
   border: 0;
   background: #6EA3A3;
   font-weight: 700;
@@ -39,7 +39,7 @@ button {
   border-radius: 5px;
 }
 
-button:hover {
+form > button:hover {
   background-color: teal;
   color: white;
 }
