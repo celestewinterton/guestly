@@ -1,5 +1,8 @@
 # Guestly
 
+live site:
+https://seat-me-guestly.herokuapp.com/
+
 # Technologies Used
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -15,7 +18,7 @@
 
 1. Clone this repository
 
-```git@github.com:celestewinterton/guestly.git```
+`git@github.com:celestewinterton/guestly.git`
 
 2. TBD
 3. TBD
@@ -30,6 +33,6 @@
 Users can...
 ![Splash Page](./path/to/image.JPG)
 
-# Database Schema 
+# Database Schema
 
 ![Database Schema](./images/schema.JPG)
