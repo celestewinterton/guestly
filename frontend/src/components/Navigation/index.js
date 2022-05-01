@@ -12,11 +12,15 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        {/* <NavLink className="nav-button" exact to="/events">Home</NavLink> */}
+        <ProfileButton user={sessionUser} />
+      </>
     );
   } else {
     sessionLinks = (
       <>
+        <NavLink className="nav-button" exact to="/">Home</NavLink>
         <LoginFormModal />
         <SignupFormModal />
         {/* <NavLink className="nav-button" to="/signup">Sign Up</NavLink> */}
@@ -34,7 +38,6 @@ function Navigation({ isLoaded }){
           <NavLink className="guestly" exact to="/">Guestly</NavLink>
         </div>
         <div className='nav-right'>
-          <NavLink className="nav-button" exact to="/">Home</NavLink>
           {isLoaded && sessionLinks}
         </div>
       </div>

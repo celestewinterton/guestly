@@ -21,7 +21,7 @@ const cancelEvent = eventId => ({
   eventId
 })
 
-const show = events => ({
+export const show = events => ({
   type: SHOW,
   payload: events
 })

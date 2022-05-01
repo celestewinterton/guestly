@@ -1,3 +1,5 @@
+/* Colors #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
+
 html, body, input, textarea, button, select, a {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 16px;
@@ -5,17 +7,31 @@ html, body, input, textarea, button, select, a {
 
 h1, h2, h3 {
   color: #004D4D;
-  font-size: 1.8em;
+  font-size: 1em;
 }
 
 h2 {
   font-size: 1.6em;
 }
 
-h3 {
-  font-size: 1em;
+h1 {
+  font-weight: 400;
+  font-size: 1.8em;
 }
 
+ul {
+  list-style-type: none;
+}
+
+.error {
+  color: red;
+  min-height: 24px;
+  min-width: 360px;
+  margin: 0 0 10px 0;
+  padding: 0 8px;
+}
+
+/************** app background *************/
 body {
   background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -23,22 +39,18 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-/* placement.jpeg */
 
 .overlay {
   background-color: #f8f2eec1;
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0px;
+  left: 0px;
+  right: -10px;
+  bottom: -10px;
   margin: 0 auto;
 }
 
-ul {
-  list-style-type: none;
-}
-
+/************ forms and buttons ************/
 .submit-button,
 form > button {
   border: 0;
@@ -66,17 +78,13 @@ main {
   right: 0;
   top: 0;
 }
-/* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
+
 form {
   flex: 0 0 400px;
   width: 290px;
   background-color: #f8f2ee;
   padding: 40px;
   margin: 20px;
-}
-
-h1 {
-  font-weight: 400;
 }
 
 label {
@@ -101,43 +109,29 @@ input:focus {
   border-bottom: 2px solid #CCC;
 }
 
-nav {
-  flex: 0 0 300px;
-  overflow-y: auto;
-}
-
-nav a {
-  color: inherit;
-  text-decoration: none;
-}
-
 select {
   width: 100%;
   margin-top: 10px;
   padding-left: 4px;
 }
 
-.error {
-  color: red;
-  min-height: 24px;
-  min-width: 360px;
-  margin: 0 0 10px 0;
-  padding: 0 8px;
-}
-
-@media screen and (min-width: 1000px) {
-}
-
-@media screen and (max-height: 800px) {
-}
-
-/* mobile */
-@media screen and (max-width: 560px) {
+/********* large screens ************/
+@media screen and (min-width: 1200px) {
   /* button {
-    background-color: red;
+    background-color: yellow;
   } */
 }
 
-.grid {
+/********* horizontally narrow ******/
+@media screen and (max-height: 670px) {
+  /* button {
+    background-color: blue;
+  } */
+}
 
+/********* mobile *******************/
+@media screen and (max-width: 600px) {
+  /* button {
+    background-color: red;
+  } */
 }

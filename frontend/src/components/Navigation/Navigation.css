@@ -1,5 +1,6 @@
 .profile-button {
   margin-right: 20px;
+
   height: 40px;
   width: 40px;
 }
@@ -13,10 +14,19 @@ nav .profile-dropdown {
   display: block;
 }
 
+.profile-dropdown > li {
+  text-align: end;
+  margin-right: 15px;
+}
+
 .profile-container {
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
-  align-items: center;
+}
+
+.home-and-profile-container {
+  display: flex;
 }
 
 .unset {
@@ -25,7 +35,7 @@ nav .profile-dropdown {
 
 /* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
 .navbar {
-  background-color: #f8f2ee89;
+  /* background-color: #f8f2ee89; */
   top: 0;
   left: 0;
   right: 0;

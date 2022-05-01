@@ -9,7 +9,8 @@ module.exports = {
         details: "",
         dresscode: "Bridesmaids and groomsmen will be wearing teal and grey. Feel free to coordinate or feel free to stand out!",
         numberOfTables: 20,
-        userId: 2
+        userId: 2,
+        venueId: 1
       }, {
         name: "Lauren and Joel",
         date: "2022-06-30",
