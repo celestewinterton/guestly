@@ -8,6 +8,14 @@ h1, h2, h3 {
   font-size: 1.8em;
 }
 
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
 body {
   background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
   -webkit-background-size: cover;

@@ -9,6 +9,16 @@
   background: none;
 }
 
+nav .profile-dropdown {
+  display: block;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .unset {
   all: unset;
 }

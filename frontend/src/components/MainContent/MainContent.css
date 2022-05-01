@@ -1,0 +1,31 @@
+/* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
+
+.main-content-container {
+  margin: 20px;
+}
+
+.main-content-container > h2 {
+  margin-bottom: 0;
+}
+
+.event-card {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #F8F2EE;
+}
+
+.add-plus {
+  all: unset;
+  color: #6EA3A3;
+  font-size: 50px;
+}
+
+.muted {
+  font-size: .8em;
+  color: grey;
+}
+
+.link {
+  font-size: 1em;
+  color: grey;
+}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SeatingConfig from "./components/SeatingConfig"
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import SeatingConfig from "./components/SeatingConfig"
+import MainContent from "./components/MainContent"
+import SplashPage from "./components/SplashPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,8 +19,26 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/test">
+          <Route exact path="/">
+            <SplashPage isLoaded={isLoaded} />
+          </Route>
+          <Route path="/events">
+            <MainContent isLoaded={isLoaded} />
+          </Route>
+          <Route path="/events/:eventId">
+            <MainContent isLoaded={isLoaded} />
+          </Route>
+          <Route path="/rsvps">
+            <MainContent isLoaded={isLoaded} />
+          </Route>
+          <Route path="/rsvps/:rsvpId">
+            <MainContent isLoaded={isLoaded} />
+          </Route>
+          <Route path="/seating-configuration">
             <SeatingConfig />
+          </Route>
+          <Route>
+            <h2>Page Not Found</h2>
           </Route>
         </Switch>
       )}

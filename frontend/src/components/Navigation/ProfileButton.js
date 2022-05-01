@@ -29,7 +29,7 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
+    <div className="profile-container">
       <button className="unset" onClick={openMenu}>
         <img className="profile-button" src="https://user-images.githubusercontent.com/96894806/165993910-02f51943-22cf-4c54-8edc-dc071458779a.png" alt="profile"></img>
       </button>
@@ -42,7 +42,7 @@ function ProfileButton({ user }) {
           </li>
         </ul>
       )}
-    </>
+    </div>
   );
 }
 
