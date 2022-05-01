@@ -9,7 +9,7 @@ const { Event } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
-  const events = await Event.findAll();
+  const events = await Event.findAll({order: [["date", "ASC"]]});
   return res.json(events)
 }));
 
