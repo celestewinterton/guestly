@@ -8,10 +8,10 @@ function RSVPCard({rsvp}) {
   return (
     <div className='card'>
       <ul className='event-card'>{rsvp.id}
-        <li>{rsvp.selfDietary}</li>
-        <li>{rsvp.plusOne}</li>
-        <li>{rsvp.plusOneDietary}</li>
-        <li>{rsvp.eventId}</li>
+        <li>{rsvp?.selfDietary}</li>
+        <li>{rsvp?.plusOne}</li>
+        <li>{rsvp?.plusOneDietary}</li>
+        <li>{rsvp?.eventId}</li>
       </ul>
     </div>
   )

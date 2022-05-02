@@ -1,8 +1,7 @@
 .profile-button {
-  margin-right: 20px;
-
   height: 40px;
   width: 40px;
+  padding: 5px;
 }
 
 .profile-button:hover {
@@ -23,6 +22,7 @@ nav .profile-dropdown {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  margin-right: 20px;
 }
 
 .home-and-profile-container {
@@ -45,7 +45,8 @@ nav .profile-dropdown {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .logo {
