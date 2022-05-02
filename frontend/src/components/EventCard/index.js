@@ -27,7 +27,7 @@ function EventCard({event}) {
             <li className='muted'>Address: 1234 Street Ave</li>
             <li className='muted'>City, CA, 95823</li>
           </ul>
-            <div><a className='link right-bottom'>edit</a></div>
+            <div><a className='link right-bottom'>Edit »</a></div>
         </div>
       </div> : null}
 
