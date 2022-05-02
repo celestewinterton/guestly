@@ -24,7 +24,7 @@ function MainContent({isLoaded}) {
   return (
     <div className='main-content-container'>
       <h2>Upcoming Events!</h2>
-      {!events && <h3>Plan your event!</h3>}
+      {!events && <h3>Plan an event!</h3>}
       <div>
         {events ? <div><h3>Planning</h3><div>{
         events.map(event => <EventCard key={event.id} event={event} />
@@ -39,7 +39,7 @@ function MainContent({isLoaded}) {
         )}</div></div> : null}
       </div>
       <div className='muted'>Don't see your event?
-        <a className='link'>Search here</a>
+      <a className='link'><span> </span>Search here</a>
       </div>
     </div>
   )
