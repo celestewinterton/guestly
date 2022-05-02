@@ -21,40 +21,25 @@ function MainContent({isLoaded}) {
     dispatch(rsvpActions.showRSVPs(rsvps));
   }, [dispatch])
 
-  let content;
-  // if (sessionUser) {
-  //   content = (
-  //   <div className='main-content-container'>
-  //     <h2>Upcoming Events!</h2>
-  //     {events && <div><button className='add-plus'> + </button>
-  //     {events.map(event => (
-  //     <ul className='event-card'>
-  //       <li><h3>{event?.name}</h3></li>
-  //       <li className='muted'>Date: {event?.date}</li>
-  //       <li className='muted'>Address: 1234 Street Ave</li>
-  //       <li className='muted'>City, CA, 95823</li>
-  //     </ul>
-  //     ))}</div>}
-  //     <div className='muted'>Don't see your event? Search <a href="/search" className='link'>here</a> or <a href="" className='link'>plan a new event!</a></div>
-  //   </div>
-  //   )
-  // } else {
-  //   content = (<SplashPage />)
-  // }
-
   return (
     <div className='main-content-container'>
-      {/* {isLoaded && content} */}
       <h2>Upcoming Events!</h2>
+      {!events && <h3>Plan your event!</h3>}
       <div>
         {events ? <div><h3>Planning</h3><div>{
-        events.map(event => <EventCard event={event}/>
-        )}</div></div> : null}
+        events.map(event => <EventCard key={event.id} event={event} />
+        )}</div>
+        <div className='muted'>
+          <a className='link center'>Plan another event?</a>
+        </div></div> : null}
       </div>
       <div>
-        {rsvps ? <div><h3>Attending</h3><div>{
-        rsvps.map(rsvp => <RSVPCard rsvp={rsvp}/>
+        {rsvps && events ? <div><h3>Attending</h3><div>{
+        rsvps.map(rsvp => <RSVPCard key={rsvp.id} rsvp={rsvp} events={events} />
         )}</div></div> : null}
+      </div>
+      <div className='muted'>Don't see your event?
+        <a className='link'>Search here</a>
       </div>
     </div>
   )

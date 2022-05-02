@@ -45,9 +45,11 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  right: -10px;
-  bottom: -10px;
-  margin: 0 auto;
+  right: 0px;
+  /* bottom: 0px;
+  margin: 0 auto; */
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 /************ forms and buttons ************/

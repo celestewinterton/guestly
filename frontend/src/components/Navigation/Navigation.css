@@ -15,14 +15,13 @@ nav .profile-dropdown {
 
 .profile-dropdown > li {
   text-align: end;
-  margin-right: 15px;
 }
 
 .profile-container {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .home-and-profile-container {
@@ -45,8 +44,6 @@ nav .profile-dropdown {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
 .logo {
