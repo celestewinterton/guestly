@@ -7,6 +7,8 @@ import SeatingConfig from "./components/SeatingConfig"
 import MainContent from "./components/MainContent"
 import SplashPage from "./components/SplashPage";
 import EventForm from "./components/EventForm";
+import EventEditForm from "./components/EventEditForm";
+import EventDetail from "./components/EventDetail";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,12 +28,16 @@ function App() {
           <Route path="/events/new">
             <EventForm />
           </Route>
+          <Route path="/events/:eventId/edit">
+            <EventEditForm />
+          </Route>
+          <Route path="/events/:eventId">
+            <EventDetail />
+          </Route>
           <Route path="/events">
             <MainContent />
           </Route>
-          {/* <Route path="/events/:eventId">
-            <MainContent isLoaded={isLoaded} />
-          </Route>
+          {/*
           <Route path="/rsvps">
             <MainContent isLoaded={isLoaded} />
           </Route>
@@ -40,7 +46,8 @@ function App() {
           </Route>
           <Route path="/seating-configuration">
             <SeatingConfig />
-          </Route> */}
+          </Route>
+          */}
           <Route>
             <h2>Page Not Found</h2>
           </Route>
