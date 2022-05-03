@@ -13,26 +13,26 @@ router.get('/', asyncHandler(async (req, res) => {
   return res.json({events, rsvps})
 }));
 
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/', requireAuth , asyncHandler(async (req, res) => {
   const { name, date, details, dresscode } = req.body;
+  const userId = req.user.id;
+
   const event = await Event.create({
-    name, date, details, dresscode
+    name, date, details, dresscode, userId,
   });
-  // const userId = req.session.auth.userId
-  // const id = await Event.create(req.body);
-  // await setTokenCookie(res);
-  // return res.redirect(`${req.baseUrl}/${id}`);
+
+  // console.log("BACKEND =======>",req.user.id)
   return res.json(event);
 }));
 
-router.put('/:id', asyncHandler(async function (req, res) {
+router.put('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
     const id = await Event.update(req.body);
     const event = await Event.one(id);
     return res.json(event);
   })
 );
 
-router.delete('/:id(\\d+)', asyncHandler(async function (req, res) {
+router.delete('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
   const event = await Event.findByPk(req.params.id);
   await event.destroy();
 }))

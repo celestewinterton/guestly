@@ -11,7 +11,7 @@ function EventForm() {
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [details, setDetails] = useState("");
-  const [dressCode, setDressCode] = useState("");
+  const [dresscode, setDresscode] = useState("");
   const [venue, setVenue] = useState("");
   const [venueStreet, setVenueStreet] = useState("");
   const [venueCity, setVenueCity] = useState("");
@@ -31,13 +31,12 @@ function EventForm() {
     setErrors([]);
     setHasSubmitted(true);
 
-    const payload = {name}
-    const event = await dispatch(eventActions.createNewEvent(payload));
+    const payload = {name, date, details, dresscode}
+    await dispatch(eventActions.createNewEvent(payload));
+    // if (event) {
+    // }
 
-    if (event) {
-      history.push("/events")
-    }
-
+    history.push("/events")
     setName('');
     setErrors([]);
     setHasSubmitted(false);
@@ -82,8 +81,8 @@ function EventForm() {
             Dresscode
             <input
               type="text"
-              value={dressCode}
-              onChange={(e) => setDressCode(e.target.value)}
+              value={dresscode}
+              onChange={(e) => setDresscode(e.target.value)}
               placeholder="Example: Black-Tie Attire or Semi-Formal"
             />
           </label>
