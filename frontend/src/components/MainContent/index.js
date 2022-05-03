@@ -24,14 +24,21 @@ function MainContent({isLoaded}) {
   return (
     <div className='main-content-container'>
       <h2>Upcoming Events!</h2>
-      {!events && <h3>Plan an event!</h3>}
+      {!events && <NavLink to='/events/new'>
+          <div className='muted'>
+            <a className='link center'>Plan an event!</a>
+          </div>
+      </NavLink>}
       <div>
         {events ? <div><h3>Planning</h3><div>{
         events.map(event => <EventCard key={event.id} event={event} />
         )}</div>
-        <div className='muted'>
-          <a className='link center'>Plan another event?</a>
-        </div></div> : null}
+          <NavLink to='/events/new'>
+            <div className='muted'>
+              <a className='link center'>Plan another event?</a>
+            </div>
+          </NavLink>
+        </div> : null}
       </div>
       <div>
         {rsvps && events ? <div><h3>Attending</h3><div>{

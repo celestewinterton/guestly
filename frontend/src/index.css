@@ -94,7 +94,7 @@ label {
   font-size: 12px;
 }
 
-input {
+input, input[type=date] {
   border: 1px solid #CCC;
   box-sizing: border-box;
   display: block;
@@ -104,11 +104,23 @@ input {
   width: 100%;
   justify-content: center;
   align-items: center;
+  color: #6EA3A3;
+  font-size: 12px;
 }
 
 input:focus {
   /* background-color: #f8f2eecc; */
   border-bottom: 2px solid #CCC;
+}
+
+input::after {
+  color: red;
+}
+
+input[type=date]::placeholder,
+input::placeholder {
+  color: #CCC;
+  font-size: 12px;
 }
 
 select {

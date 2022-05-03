@@ -23,11 +23,11 @@ function App() {
           <Route exact path="/">
             <SplashPage />
           </Route>
-          <Route path="/events">
-            <MainContent />
-          </Route>
           <Route path="/events/new">
             <EventForm />
+          </Route>
+          <Route path="/events">
+            <MainContent />
           </Route>
           {/* <Route path="/events/:eventId">
             <MainContent isLoaded={isLoaded} />
