@@ -3,25 +3,96 @@ import { useState, useEffect } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import url from '../MainContent/images/proposal.jpeg';
+import { useHistory } from 'react-router';
 
 function EventEditForm() {
-
   const dispatch = useDispatch();
+  const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
   const {eventId} = useParams();
   const events = useSelector(state => state.events.events)
   const event = events.find(event => event.id === parseInt(eventId))
   let myEvent = event.userId === sessionUser.id
 
+  const [name, setName] = useState(event.name);
+  const [date, setDate] = useState(event.date);
+  const [details, setDetails] = useState(event.details);
+  const [dresscode, setDresscode] = useState(event.dresscode);
+  const [venue, setVenue] = useState("");
+  const [venueStreet, setVenueStreet] = useState("");
+  const [venueCity, setVenueCity] = useState("");
+  const [venueState, setVenueState] = useState("");
+  const [venueZip, setVenueZip] = useState("");
+  const [errors, setErrors] = useState([]);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
-  }, [dispatch])
+    const errors = [];
+    if (!name.length) errors.push('Please enter your Name');
+    setErrors(errors);
+  }, [dispatch, name])
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrors([]);
+    setHasSubmitted(true);
+
+    const payload = {...event, date, details, dresscode}
+    await dispatch(eventActions.editEvent(payload));
+
+    history.push("/events")
+    setName('');
+    setErrors([]);
+    setHasSubmitted(false);
+  };
 
   return (
-    <div>
-      <div className="edit-form-container">
-        <div>Event Edit Form</div>
+    <div className="center">
+      <div className="create-event-form-container">
+        <form onSubmit={handleSubmit}>
+          <h3>Let's plan your event!</h3>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx} className="error">{error}</li>
+            ))}
+          </ul>
+          <label>
+            Event Title
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Date
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Details
+            <textarea
+              value={details}
+              onChange={(e) => setDetails(e.target.value)}
+            />
+          </label>
+          <label>
+            Dresscode
+            <input
+              type="text"
+              value={dresscode}
+              onChange={(e) => setDresscode(e.target.value)}
+              placeholder={dresscode ? dresscode : "Example: Black-Tie Attire or Semi-Formal"}
+            />
+          </label>
+          <button type="submit">Save</button>
+        </form>
       </div>
     </div>
   )

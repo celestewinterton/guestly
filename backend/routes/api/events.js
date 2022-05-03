@@ -21,16 +21,16 @@ router.post('/', requireAuth , asyncHandler(async (req, res) => {
     name, date, details, dresscode, userId,
   });
 
-  // console.log("BACKEND =======>",req.user.id)
   return res.json(event);
 }));
 
-router.put('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
-    const id = await Event.update(req.body);
-    const event = await Event.one(id);
-    return res.json(event);
-  })
-);
+router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
+  console.log("BACKEND =======>", req.body)
+  await Event.update(req.body);
+  const event = await Event.findByPk(req.params.id);
+  console.log("BACKEND =======>",id, "!!!", event)
+  return res.json(event);
+}));
 
 router.delete('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
   const event = await Event.findByPk(req.params.id);

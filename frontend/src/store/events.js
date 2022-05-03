@@ -35,6 +35,7 @@ export const createNewEvent = (newEvent) => async dispatch => {
   if (response.ok) {
     const event = await response.json();
     dispatch(createEvent(event));
+    return event;
   }
 }
 
@@ -43,10 +44,38 @@ const updateEvent = eventId => ({
   eventId
 })
 
+export const editEvent = (payload) => async dispatch => {
+  const response = await csrfFetch(`/api/events/${payload.id}`, {
+    method: 'PUT',
+    headers: {'ContentType': 'application/json'},
+    body: JSON.stringify(payload)
+  })
+
+  if (response.ok) {
+    const event = await response.json();
+    dispatch(updateEvent(event));
+    return event;
+  }
+}
+
 const cancelEvent = eventId => ({
   type: CANCEL,
   eventId
 })
+
+export const cancelCurrentEvent = (id) => async dispatch => {
+  const response = await csrfFetch(`/api/events/${id}`, {
+    method: 'DELETE',
+    headers: {'ContentType': 'application/json'},
+    body: JSON.stringify(id)
+  })
+
+  if (response.ok) {
+    const event = await response.json();
+    dispatch(cancelEvent(event));
+    return event;
+  }
+}
 
 const sortList = (list) => {
   return list.sort((eventA, eventB) => {
@@ -64,36 +93,19 @@ const eventsReducer = (state = initialState, action) => {
       newState = action.payload;
       return newState;
     case CREATE:
-      // newState = Object.assign({}, state);
-      // newState = action.payload;
-      // newState.push(action.payload)
       newState = {
         ...state,
         [action.payload]: action.payload,
       };
       return newState;
-
-      // if (!state[action.event.id]) {
-      //   const newState = {
-      //     ...state,
-      //     [action.event.id]: action.event
-      //   };
-      //   const eventsList = newState.list.map(id => newState[id]);
-      //   eventsList.push(action.event);
-      //   newState.list = sortList(eventsList);
-      //   return newState;
-      // }
-      return {
+    case UPDATE:
+      newState = {
         ...state,
-        [action.event.id]: {
-          ...state[action.event.id],
-          ...action.event
-        }
+        [action.payload]: action.payload,
       };
-      // case UPDATE:
-      //   return state
-      // case REMOVE:
-      //   return state.filter(({id}) => id !== action.payload)
+      return newState;
+    case CANCEL:
+      return state.filter(({id}) => id !== action.payload)
     default:
       return state;
   }

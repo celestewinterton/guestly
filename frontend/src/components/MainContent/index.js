@@ -14,7 +14,7 @@ function MainContent({isLoaded}) {
   const sessionUser = useSelector(state => state.session.user);
   const events = useSelector(state => state.events.events)
   const rsvps = useSelector(state => state.rsvps.rsvps)
-  console.log("==========>", rsvps)
+  // console.log("==========>", rsvps)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
