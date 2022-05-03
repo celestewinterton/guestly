@@ -29,6 +29,8 @@ ul {
   min-width: 360px;
   margin: 0 0 10px 0;
   padding: 0 8px;
+  font-size: 12px;
+  list-style: disc;
 }
 
 /************** app background *************/
@@ -94,7 +96,7 @@ label {
   font-size: 12px;
 }
 
-input, input[type=date] {
+input, input[type=date], textarea {
   border: 1px solid #CCC;
   box-sizing: border-box;
   display: block;
@@ -108,15 +110,12 @@ input, input[type=date] {
   font-size: 12px;
 }
 
-input:focus {
+input:focus  {
   /* background-color: #f8f2eecc; */
   border-bottom: 2px solid #CCC;
 }
 
-input::after {
-  color: red;
-}
-
+textarea::placeholder,
 input[type=date]::placeholder,
 input::placeholder {
   color: #CCC;

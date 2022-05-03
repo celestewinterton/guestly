@@ -13,26 +13,29 @@ router.get('/', asyncHandler(async (req, res) => {
   return res.json({events, rsvps})
 }));
 
-// router.get('/', restoreUser, (req, res) => {
-//     const { user } = req;
-//     if (user) {
-//       return res.json({
-//         user: user.toSafeObject()
-//       });
-//     } else return res.json({});
-//   }
-// );
+router.post('/', asyncHandler(async (req, res) => {
+  const { name, date, details, dresscode } = req.body;
+  const event = await Event.create({
+    name, date, details, dresscode
+  });
+  // const userId = req.session.auth.userId
+  // const id = await Event.create(req.body);
+  // await setTokenCookie(res);
+  // return res.redirect(`${req.baseUrl}/${id}`);
+  return res.json(event);
+}));
 
-// router.post('/', asyncHandler(async (req, res) => {
-//   const { name, date, details, dresscode, numberOfTables } = req.body;
-//   const event = await Event.signup({ name, date, details, dresscode, numberOfTables });
+router.put('/:id', asyncHandler(async function (req, res) {
+    const id = await Event.update(req.body);
+    const event = await Event.one(id);
+    return res.json(event);
+  })
+);
 
-//   await setTokenCookie(res, event);
-
-//   return res.json({
-//     event
-//   });
-// }));
+router.delete('/:id(\\d+)', asyncHandler(async function (req, res) {
+  const event = await Event.findByPk(req.params.id);
+  await event.destroy();
+}))
 
 
 module.exports = router;

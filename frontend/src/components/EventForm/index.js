@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import * as eventActions from '../../store/events';
 
 function EventForm() {
   const sessionUser = useSelector(state => state.session.user);
@@ -25,19 +26,23 @@ function EventForm() {
     setErrors(errors);
   }, [name])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
     setHasSubmitted(true);
 
     const payload = {name}
+    const event = await dispatch(eventActions.createNewEvent(payload));
+
+    if (event) {
+      history.push("/events")
+    }
 
     setName('');
     setErrors([]);
     setHasSubmitted(false);
-    history.push("/events")
   };
-  console.log(sessionUser)
+
   return (
     <div className="center">
       <div className="create-event-form-container">
@@ -45,7 +50,7 @@ function EventForm() {
           <h3>Let's plan your event!</h3>
           <ul>
             {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
+              <li key={idx} className="error">{error}</li>
             ))}
           </ul>
           <label>
@@ -68,8 +73,7 @@ function EventForm() {
           </label>
           <label>
             Details
-            <input
-              type="textarea"
+            <textarea
               value={details}
               onChange={(e) => setDetails(e.target.value)}
             />
