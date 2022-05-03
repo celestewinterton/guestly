@@ -9,6 +9,7 @@ import SplashPage from "./components/SplashPage";
 import EventForm from "./components/EventForm";
 import EventEditForm from "./components/EventEditForm";
 import EventDetail from "./components/EventDetail";
+import CalendarPage from "./components/Calendar";
 
 function App() {
   const dispatch = useDispatch();
@@ -48,6 +49,9 @@ function App() {
             <SeatingConfig />
           </Route>
           */}
+          <Route path="/calendar">
+            <CalendarPage />
+          </Route>
           <Route>
             <h2>Page Not Found</h2>
           </Route>

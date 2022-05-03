@@ -4,6 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import url from '../MainContent/images/proposal.jpeg';
 import { useHistory } from 'react-router';
+import Calendar from 'react-calendar';
 
 function EventEditForm() {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ function EventEditForm() {
   let myEvent = event.userId === sessionUser.id
 
   const [name, setName] = useState(event.name);
-  const [date, setDate] = useState(event.date);
+  const [date, setDate] = useState((`${event.date}`).slice(0, 10));
   const [details, setDetails] = useState(event.details);
   const [dresscode, setDresscode] = useState(event.dresscode);
   const [venue, setVenue] = useState("");
@@ -38,7 +39,7 @@ function EventEditForm() {
     setErrors([]);
     setHasSubmitted(true);
 
-    const payload = {...event, date, details, dresscode}
+    const payload = {...event, name, date, details, dresscode}
     await dispatch(eventActions.editEvent(payload));
 
     history.push("/events")

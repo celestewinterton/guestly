@@ -25,11 +25,10 @@ router.post('/', requireAuth , asyncHandler(async (req, res) => {
 }));
 
 router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
-  console.log("BACKEND =======>", req.body)
-  await Event.update(req.body);
   const event = await Event.findByPk(req.params.id);
-  console.log("BACKEND =======>",id, "!!!", event)
-  return res.json(event);
+  const newEvent = await event.update(req.body);
+  // console.log("BACKEND =======>",id, "!!!", event, "!!!", (req.params.id) )
+  return res.json(newEvent);
 }));
 
 router.delete('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
