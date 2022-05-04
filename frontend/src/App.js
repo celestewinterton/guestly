@@ -10,6 +10,7 @@ import EventForm from "./components/EventForm";
 import EventEditForm from "./components/EventEditForm";
 import EventDetail from "./components/EventDetail";
 import CalendarPage from "./components/Calendar";
+import Search from "./components/Search";
 
 function App() {
   const dispatch = useDispatch();
@@ -51,6 +52,9 @@ function App() {
           */}
           <Route path="/calendar">
             <CalendarPage />
+          </Route>
+          <Route path="/search">
+            <Search />
           </Route>
           <Route>
             <h2>Page Not Found</h2>

@@ -89,7 +89,7 @@ const eventsReducer = (state = initialState, action) => {
       for (let event of action.payload.events) {
         events[event.id] = event;
       }
-      console.log({...state, ...events})
+      // console.log({...state, ...events})
       return {...state, ...events}
     case CREATE:
       newState = {

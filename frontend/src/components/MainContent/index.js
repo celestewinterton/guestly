@@ -14,7 +14,7 @@ function MainContent({isLoaded}) {
   const sessionUser = useSelector(state => state.session.user);
   const events = useSelector(state => state.events)
   const rsvps = useSelector(state => state.rsvps.rsvps)
-  console.log("==========>", events)
+  // console.log("==========>", events)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
@@ -31,7 +31,7 @@ function MainContent({isLoaded}) {
       </NavLink>}
       <div>
         {events ? <div><h3>Planning</h3><div>{
-        Object.values(events).map(event => <EventCard key={event.id} event={event} />
+        Object.values(events).map(event => <EventCard key={event?.id} event={event} />
         )}</div>
           <NavLink to='/events/new'>
             <div className='muted'>
