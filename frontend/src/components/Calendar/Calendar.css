@@ -1,16 +1,21 @@
 .calendar-container {
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: center;
-  /* padding: 40px; */
 }
 
 .card {
   flex-wrap: wrap;
 }
 
+div.react-calendar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 .react-calendar__navigation {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .react-calendar__navigation > button {
@@ -40,14 +45,18 @@ abbr[title] {
 
 /* tiles */
 .react-calendar__tile {
-  /* all: unset; */
-  text-align: center;
-  padding: 10px 2px;
-  border: .5px solid #CCC;
-  background-color: transparent;
   transition: background-color .25s, color .25s;
 }
 
-.react-calendar__tile:hover {
-  background-color: #cde5e5;
+div > .react-calendar__tile--now {
+  background-color: #F8F2EE;
+}
+
+div > .react-calendar__tile--active:enabled:hover {
+  background-color: teal;
+  color: white;
+}
+
+div > .react-calendar__month-view__days__day--weekend {
+  color: teal;
 }

@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css'
+import 'react-calendar/dist/Calendar.css';
 
 function CalendarPage() {
-  const [value, setValue] = useState(new Date());
+  const [date, setDate] = useState(new Date());
 
   function onChange(nextValue) {
-    setValue(nextValue);
+    setDate(nextValue);
   }
-  console.log("===>", value)
+  console.log("===>", date)
 
   return (
     <div className='calendar-container'>
@@ -16,7 +17,7 @@ function CalendarPage() {
         <h2>Calendar Page</h2>
         <Calendar
           onChange={onChange}
-          value={value}
+          value={date}
         />
         <div>
           <h2>Event Name</h2>
