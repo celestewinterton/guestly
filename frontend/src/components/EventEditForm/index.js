@@ -11,8 +11,8 @@ function EventEditForm() {
   const history = useHistory();
   const sessionUser = useSelector(state => state.session.user);
   const {eventId} = useParams();
-  const events = useSelector(state => state.events.events)
-  const event = events.find(event => event.id === parseInt(eventId))
+  const events = useSelector(state => state.events)
+  const event = Object.values(events).find(event => event.id === parseInt(eventId))
   let myEvent = event.userId === sessionUser.id
 
   const [name, setName] = useState(event.name);
@@ -50,8 +50,8 @@ function EventEditForm() {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    console.log("handleDelete",eventId, typeof eventId)
     dispatch(eventActions.cancelCurrentEvent(eventId));
+    history.push("/events")
   }
 
   return (
@@ -100,7 +100,7 @@ function EventEditForm() {
           </label>
           <button type="submit">Save</button>
         </form>
-          <button onClick={handleDelete}>Cancel Event</button>
+          <button className="link unset right-bottom" onClick={handleDelete}>Cancel Event</button>
       </div>
     </div>
   )

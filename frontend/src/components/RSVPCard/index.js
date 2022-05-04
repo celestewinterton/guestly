@@ -5,7 +5,7 @@ import url from '../MainContent/images/wed.jpeg';
 
 function RSVPCard({rsvp, events}) {
   const sessionUser = useSelector(state => state.session.user);
-  const event = events.find(event => event.id === rsvp.eventId)
+  const event = Object.values(events).find(event => event.id === rsvp.eventId)
   const myRSVP = sessionUser.id === rsvp.userId
 
   return (

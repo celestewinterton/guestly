@@ -12,9 +12,9 @@ import { Route } from 'react-router';
 function MainContent({isLoaded}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const events = useSelector(state => state.events.events)
+  const events = useSelector(state => state.events)
   const rsvps = useSelector(state => state.rsvps.rsvps)
-  // console.log("==========>", rsvps)
+  console.log("==========>", events)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
@@ -31,7 +31,7 @@ function MainContent({isLoaded}) {
       </NavLink>}
       <div>
         {events ? <div><h3>Planning</h3><div>{
-        events.map(event => <EventCard key={event.id} event={event} />
+        Object.values(events).map(event => <EventCard key={event.id} event={event} />
         )}</div>
           <NavLink to='/events/new'>
             <div className='muted'>
