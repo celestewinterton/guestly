@@ -59,11 +59,6 @@
   align-items: flex-end;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
-
 .row-right-bottom {
   display: flex;
   flex-direction: row;

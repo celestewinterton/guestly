@@ -33,6 +33,11 @@ ul {
   list-style: disc;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 /************** app background *************/
 body {
   background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
