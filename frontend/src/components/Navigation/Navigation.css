@@ -109,7 +109,7 @@ font-family: 'Quicksand', sans-serif; */
 
 .search-input {
   all: unset;
-  background-color: #F8F2EE;
+  background-color: white;
   border-radius: 10px;
   border: 1px solid #CCC;
   box-sizing: border-box;

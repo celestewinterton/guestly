@@ -7,7 +7,7 @@ import url from '../MainContent/images/proposal.jpeg';
 function EventCard({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const myEvent = event.userId === sessionUser.id
+  const myEvent = event?.userId === sessionUser?.id
   const events = useSelector(state => state.events)
 
   useEffect(() => {

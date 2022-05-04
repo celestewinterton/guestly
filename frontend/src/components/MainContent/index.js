@@ -14,7 +14,6 @@ function MainContent({isLoaded}) {
   const sessionUser = useSelector(state => state.session.user);
   const events = useSelector(state => state.events)
   const rsvps = useSelector(state => state.rsvps)
-  // console.log("==========>", events)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
@@ -42,7 +41,7 @@ function MainContent({isLoaded}) {
       </div>
       <div>
         {rsvps && events ? <div><h3>Attending</h3><div>{
-        rsvps.map(rsvp => <RSVPCard key={rsvp.id} rsvp={rsvp} events={events} />
+        Object.values(rsvps).map(rsvp => <RSVPCard key={rsvp.id} rsvp={rsvp} />
         )}</div></div> : null}
       </div>
       <div className='muted'>Don't see your event?

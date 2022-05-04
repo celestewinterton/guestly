@@ -7,16 +7,15 @@ const { User, Event, Venue, RSVP, Table, Seat } = require('../../db/models');
 
 const router = express.Router();
 
-router.get('/', asyncHandler(async (req, res) => {
+router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.user.id;
   const rsvps = await RSVP.findAll({
-    // include: Event,
-    // where: {userId: userId}
+    include: Event
   });
   return res.json(rsvps)
 }));
 
-router.post('/', requireAuth , asyncHandler(async (req, res) => {
+router.post('/', requireAuth, asyncHandler(async (req, res) => {
   const { plusOne, selfDietary, plusOneDietary } = req.body;
   const userId = req.user.id;
   const eventId = ""; //TBD

@@ -13,7 +13,7 @@ function EventDetail() {
   const {eventId} = useParams();
   const events = useSelector(state => state.events)
   const event = Object.values(events)?.find(event => event.id === parseInt(eventId))
-  let myEvent = event?.userId === sessionUser?.id
+  let host = event?.userId === sessionUser?.id
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
@@ -21,8 +21,8 @@ function EventDetail() {
 
   return (
     <div>
-      {myEvent ? <EventGuest event={event} />
-      : <EventPlanner event={event} />}
+      {host ? <EventPlanner event={event} />
+      : <EventGuest event={event} />}
     </div>
   )
 }

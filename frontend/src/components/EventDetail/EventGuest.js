@@ -8,9 +8,9 @@ import url from '../MainContent/images/proposal.jpeg';
 function EventGuest({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const rsvps = useSelector(state => state.rsvp);
-  const rsvp = Object.values(rsvps)?.includes(sessionUser.id)
-  console.log("GUEST VIEW =====>", rsvp, rsvps)
+  const rsvps = useSelector(state => state.rsvps);
+  const rsvp = Object.values(rsvps)?.find(rsvp => rsvp.eventId === event.id);
+  // console.log("GUEST VIEW =====>", rsvps, rsvp)
 
   useEffect(() => {
     dispatch(rsvpActions.showRSVPs(rsvps));
@@ -19,30 +19,27 @@ function EventGuest({event}) {
   return (
     <div className='center'>
       <div className='large-card'>
-        <div className='nav-left'>
-          {/* <nav>
-            <NavLink className='nav-button' to="">Guestlist</NavLink>
-            <NavLink className='nav-button' to="">Seating</NavLink>
-            <NavLink className='nav-button' to="">Registry</NavLink>
-          </nav> */}
-
-        </div>
         <div className='card-image'>
           <img className='card-image-format' src={url} alt='Wedding'></img>
         </div>
         <div className='right'>
           <ul className='event-info'>
-            <li><h3><NavLink className="unset" to={`/events/${event.id}`}>{event?.name}</NavLink></h3></li>
+            <li><h3><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h3></li>
             <li className='muted'>Date: {event?.date}</li>
             <li className='muted'>Address: 1234 Street Ave</li>
             <li className='muted'>City, CA, 95823</li>
           </ul>
             <div className='row-right-bottom'>
-              {/* <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
-              <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a> */}
-
-              <button className='teal-button'>RSVP</button>
+            {rsvp ?
+            <div>
+              <div className='muted already-attending'>Already attending!</div>
+              <div className='row-right-bottom'>
+                <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
+                <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
+              </div>
             </div>
+            : <div className='row-right-bottom'><button className='teal-button'>RSVP</button></div>}
+          </div>
         </div>
       </div>
     </div>

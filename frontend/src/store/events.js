@@ -1,9 +1,9 @@
 import { csrfFetch } from "./csrf";
 
-export const SHOW = './events/LOAD'
-export const CREATE = './events/CREATE'
-export const UPDATE = './events/UPDATE'
-export const CANCEL = './events/CANCEL'
+const SHOW = './events/LOAD'
+const CREATE = './events/CREATE'
+const UPDATE = './events/UPDATE'
+const CANCEL = './events/CANCEL'
 
 export const show = events => ({
   type: SHOW,

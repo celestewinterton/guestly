@@ -2,11 +2,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import * as eventActions from '../../store/events';
 import url from '../MainContent/images/wed.jpeg';
+import { NavLink } from 'react-router-dom';
 
-function RSVPCard({rsvp, events}) {
+function RSVPCard({rsvp}) {
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const events = useSelector(state => state.events)
   const event = Object.values(events).find(event => event.id === rsvp.eventId)
-  const myRSVP = sessionUser.id === rsvp.userId
+  const myRSVP = sessionUser.id === rsvp.userId;
+  console.log( rsvp,", ", Object.values(events))
+
+  useEffect(() => {
+    dispatch(eventActions.showAllEvents(events));
+  }, [dispatch])
 
   return (
     <div>
@@ -23,9 +31,12 @@ function RSVPCard({rsvp, events}) {
             <li className='muted'>{rsvp?.plusOne}</li>
             <li className='muted'>{rsvp?.plusOneDietary}</li>
           </ul>
-            <div><a className='link right-bottom'>More Details »</a></div>
+          <div className='row-right-bottom'>
+              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp.id}/edit`}>Edit »</NavLink></a>
+              <a className='link right-bottom'><NavLink className="unset" to={`/events/${event.id}`}>More Details »</NavLink></a>
+          </div>
         </div>
-    </div> : null}
+      </div> : null}
     </div>
   )
 }

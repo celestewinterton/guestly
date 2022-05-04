@@ -9,7 +9,7 @@ const Search = ({query, setSearchResults}) => {
   const dispatch = useDispatch();
   const events = useSelector(state => state.events)
   const eventResults = Object.values(events)?.filter(
-    event => event.name?.toLowerCase().includes(query?.toLowerCase())
+    event => event?.name?.toLowerCase().includes(query?.toLowerCase())
   );
 
   const formatResult = result => {

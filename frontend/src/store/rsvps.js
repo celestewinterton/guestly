@@ -1,5 +1,9 @@
-import { SHOW, CREATE, UPDATE, CANCEL } from "./events";
 import { csrfFetch } from "./csrf";
+
+const SHOW = './rsvps/LOAD'
+const CREATE = './rsvps/CREATE'
+const UPDATE = './rsvps/UPDATE'
+const CANCEL = './rsvps/CANCEL'
 
 export const show = rsvps => ({
   type: SHOW,
@@ -72,8 +76,8 @@ const rsvpsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SHOW:
       const rsvps = {}
-      for (let rsvp of action.payload.rsvps) {
-        rsvps[rsvp.id] = rsvps;
+      for (let rsvp of action.payload) {
+        rsvps[rsvp.id] = rsvp;
       }
       return {...state, ...rsvps}
     case CREATE:
