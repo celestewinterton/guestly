@@ -27,7 +27,6 @@ router.post('/', requireAuth , asyncHandler(async (req, res) => {
 router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
   const event = await Event.findByPk(req.params.id);
   const newEvent = await event.update(req.body);
-  // console.log("BACKEND =======>",id, "!!!", event, "!!!", (req.params.id) )
   return res.json(newEvent);
 }));
 

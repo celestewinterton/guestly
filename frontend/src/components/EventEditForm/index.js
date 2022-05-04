@@ -48,6 +48,12 @@ function EventEditForm() {
     setHasSubmitted(false);
   };
 
+  const handleDelete = (e) => {
+    e.preventDefault();
+    console.log("handleDelete",eventId, typeof eventId)
+    dispatch(eventActions.cancelCurrentEvent(eventId));
+  }
+
   return (
     <div className="center">
       <div className="create-event-form-container">
@@ -94,6 +100,7 @@ function EventEditForm() {
           </label>
           <button type="submit">Save</button>
         </form>
+          <button onClick={handleDelete}>Cancel Event</button>
       </div>
     </div>
   )

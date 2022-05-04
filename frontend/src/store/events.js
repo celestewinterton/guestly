@@ -58,23 +58,21 @@ export const editEvent = (payload) => async dispatch => {
   }
 }
 
-const cancelEvent = eventId => ({
+const cancelEvent = id => ({
   type: CANCEL,
-  eventId
+  id
 })
 
 export const cancelCurrentEvent = (id) => async dispatch => {
-  const response = await csrfFetch(`/api/events/${id}`, {
-    method: 'DELETE',
-    headers: {'ContentType': 'application/json'},
-    body: JSON.stringify(id)
-  })
-
-  if (response.ok) {
-    const event = await response.json();
-    dispatch(cancelEvent(event));
-    return event;
-  }
+  // const response = await csrfFetch(`/api/events/${id}`, {
+  //   method: 'DELETE',
+  //   headers: {'ContentType': 'application/json'}
+  //   // body: JSON.stringify(id)
+  // })
+  // console.log(response)
+  dispatch(cancelEvent(id));
+  // if (response.ok) {
+  // }
 }
 
 const sortList = (list) => {
@@ -105,7 +103,13 @@ const eventsReducer = (state = initialState, action) => {
       };
       return newState;
     case CANCEL:
-      return state.filter(({id}) => id !== action.payload)
+      console.log("NEWSTATE ===>",newState)
+      console.log("REDUCER ===>", action.id)
+      newState = {...state}
+      console.log("NEWSTATE ===>",newState)
+      delete newState[action.id];
+      return newState;
+      // return state.filter(({id}) => id !== action.payload)
     default:
       return state;
   }
