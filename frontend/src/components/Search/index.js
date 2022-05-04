@@ -8,8 +8,6 @@ import { NavLink } from 'react-router-dom';
 const Search = ({query, setSearchResults}) => {
   const dispatch = useDispatch();
   const events = useSelector(state => state.events)
-  // const rsvps = useSelector(state => state.rsvps)
-
   const eventResults = Object.values(events)?.filter(
     event => event.name?.toLowerCase().includes(query?.toLowerCase())
   );
@@ -29,7 +27,6 @@ const Search = ({query, setSearchResults}) => {
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
-    // dispatch(rsvpActions.showRSVPs(rsvps));
   }, [dispatch])
 
   return (
@@ -43,12 +40,12 @@ const Search = ({query, setSearchResults}) => {
                 {formatResult(event.name)}
               </NavLink>
             </li>)
-          : null }</ul>
-        <h4>Events</h4>
+          : <div className='muted'>No results were found</div> }</ul>
+        <h4>Venues</h4>
           <ul>
             <li className='muted'>Location-based search is currently not active, please check back later</li>
           </ul>
-        <h4>City</h4>
+        <h4>Locations</h4>
           <ul>
             <li className='muted'>Location-based search is currently not active, please check back later</li>
           </ul>

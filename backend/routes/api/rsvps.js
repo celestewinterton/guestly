@@ -10,8 +10,8 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req, res) => {
   const userId = req.user.id;
   const rsvps = await RSVP.findAll({
-    include: Event,
-    where: {userId: userId}
+    // include: Event,
+    // where: {userId: userId}
   });
   return res.json(rsvps)
 }));

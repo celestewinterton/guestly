@@ -26,12 +26,6 @@
   margin: 5px;
 }
 
-.add-plus {
-  all: unset;
-  color: #6EA3A3;
-  font-size: 50px;
-}
-
 .muted {
   font-size: .8em;
   color: grey;

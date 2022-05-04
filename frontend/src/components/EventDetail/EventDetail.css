@@ -1,0 +1,15 @@
+.large-card {
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 90vw;
+  height: 75vh;
+  background-color: #F8F2EE;
+  display: flex;
+}
+
+.card-image-format {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+  margin: 5px;
+}

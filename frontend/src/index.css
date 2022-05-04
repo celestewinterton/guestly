@@ -5,8 +5,12 @@ html, body, input, textarea, button, select, a {
   font-size: 16px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   color: #004D4D;
+  font-size: .8em;
+}
+
+h3 {
   font-size: 1em;
 }
 
@@ -23,6 +27,12 @@ ul {
   list-style-type: none;
 }
 
+.page-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
 .error {
   color: red;
   min-height: 24px;
@@ -36,6 +46,10 @@ ul {
 .center {
   display: flex;
   justify-content: center;
+}
+
+.text-center {
+  text-align: center;
 }
 
 /************** app background *************/
@@ -61,6 +75,7 @@ body {
 
 /************ forms and buttons ************/
 .submit-button,
+.teal-button,
 form > button {
   border: 0;
   background: #6EA3A3;
@@ -115,10 +130,10 @@ input, input[type=date], textarea {
   font-size: 12px;
 }
 
-input:focus  {
-  /* background-color: #f8f2eecc; */
+/* input:focus  {
+  background-color: #f8f2eecc;
   border-bottom: 2px solid #CCC;
-}
+} */
 
 textarea::placeholder,
 input[type=date]::placeholder,

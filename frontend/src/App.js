@@ -22,45 +22,47 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route exact path="/">
-            <SplashPage />
-          </Route>
-          <Route path="/events/new">
-            <EventForm />
-          </Route>
-          <Route path="/events/:eventId/edit">
-            <EventEditForm />
-          </Route>
-          <Route path="/events/:eventId">
-            <EventDetail />
-          </Route>
-          <Route path="/events">
-            <MainContent />
-          </Route>
-          {/*
-          <Route path="/rsvps">
-            <MainContent isLoaded={isLoaded} />
-          </Route>
-          <Route path="/rsvps/:rsvpId">
-            <MainContent isLoaded={isLoaded} />
-          </Route>
-          <Route path="/seating-configuration">
-            <SeatingConfig />
-          </Route>
-          */}
-          <Route path="/calendar">
-            <CalendarPage />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route>
-            <h2>Page Not Found</h2>
-          </Route>
-        </Switch>
-      )}
+      <div className='page-content'>
+        {isLoaded && (
+          <Switch>
+            <Route exact path="/">
+              <SplashPage />
+            </Route>
+            <Route path="/events/new">
+              <EventForm />
+            </Route>
+            <Route path="/events/:eventId/edit">
+              <EventEditForm />
+            </Route>
+            <Route path="/events/:eventId">
+              <EventDetail />
+            </Route>
+            <Route path="/events">
+              <MainContent />
+            </Route>
+            {/*
+            <Route path="/rsvps">
+              <MainContent isLoaded={isLoaded} />
+            </Route>
+            <Route path="/rsvps/:rsvpId">
+              <MainContent isLoaded={isLoaded} />
+            </Route>
+            <Route path="/seating-configuration">
+              <SeatingConfig />
+            </Route>
+            */}
+            <Route path="/calendar">
+              <CalendarPage />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route>
+              <h2>Page Not Found</h2>
+            </Route>
+          </Switch>
+        )}
+      </div>
     </>
   );
 }

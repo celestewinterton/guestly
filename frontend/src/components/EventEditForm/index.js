@@ -58,7 +58,7 @@ function EventEditForm() {
     <div className="center">
       <div className="create-event-form-container">
         <form onSubmit={handleSubmit}>
-          <h3>Let's plan your event!</h3>
+          <h3>Update your event</h3>
           <ul>
             {errors.map((error, idx) => (
               <li key={idx} className="error">{error}</li>
