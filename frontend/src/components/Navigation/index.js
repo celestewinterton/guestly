@@ -24,7 +24,7 @@ function Navigation({ isLoaded }){
       <div className='search-bar'>
         <input
           className='search-input'
-          placeholder='Searh for events...'
+          placeholder='Search for events...'
           value={query}
           onChange={e=>setQuery(e.target.value)}
           onClick={e => e.stopPropagation}/>

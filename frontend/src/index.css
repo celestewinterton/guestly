@@ -30,7 +30,7 @@ ul {
 .page-content {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .error {
