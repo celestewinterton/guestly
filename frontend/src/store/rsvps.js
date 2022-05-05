@@ -21,9 +21,9 @@ export const showRSVPs = () => async dispatch => {
   }
 }
 
-const updateRSVPs = event => ({
+const updateRSVPs = rsvp => ({
   type: CREATE,
-  event
+  rsvp
 })
 
 export const createNewRSVP = (newRSVP) => async dispatch => {
@@ -60,11 +60,13 @@ const cancelRSVP = id => ({
 })
 
 export const cancelCurrentRSVP = (id) => async dispatch => {
+  console.log("THUNK=======>", id)
   const response = await csrfFetch(`/api/rsvps/${id}`, {
     method: 'DELETE',
   })
-
   if (response.ok) {
+    console.log("THUNK ===>",response, id)
+    console.log("Deleted ===>",id )
     dispatch(cancelRSVP(id));
   }
 }
@@ -83,7 +85,7 @@ const rsvpsReducer = (state = initialState, action) => {
     case CREATE:
       newState = {
         ...state,
-        [action.payload]: action.payload,
+        [action.rsvp.id]: action.rsvp,
       };
       return newState;
     case UPDATE:

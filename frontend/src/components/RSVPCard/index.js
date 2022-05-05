@@ -32,8 +32,8 @@ function RSVPCard({rsvp}) {
             <li className='muted'>{rsvp?.plusOneDietary}</li>
           </ul>
           <div className='row-right-bottom'>
-              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp?.id}/edit`}>Edit »</NavLink></a>
-              <a className='link right-bottom'><NavLink className="unset" to={`/rsvps/${rsvp?.id}`}>More Details »</NavLink></a>
+              <a className='link right-bottom pad-right'><NavLink className="unset" to={{pathname: `/rsvps/${rsvp?.id}/edit`, rsvp: {rsvp}}}>Edit »</NavLink></a>
+              <a className='link right-bottom'><NavLink className="unset" to={{pathname: `/rsvps/${rsvp?.id}`, rsvp: {rsvp}}}>More Details »</NavLink></a>
           </div>
         </div>
       </div> : null}

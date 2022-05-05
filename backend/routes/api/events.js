@@ -8,7 +8,10 @@ const { User, Event, Venue, RSVP, Table, Seat } = require('../../db/models');
 const router = express.Router();
 
 router.get('/', asyncHandler(async (req, res) => {
-  const events = await Event.findAll({order: [["date", "ASC"]]});
+  const events = await Event.findAll({
+    include: Venue,
+    order: [["date", "ASC"]]
+  });
   // const rsvps = await RSVP.findAll();
   return res.json({events})
 }));

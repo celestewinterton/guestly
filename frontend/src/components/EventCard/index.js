@@ -8,11 +8,6 @@ function EventCard({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const myEvent = event?.userId === sessionUser?.id
-  const events = useSelector(state => state.events)
-
-  useEffect(() => {
-    dispatch(eventActions.showAllEvents(events));
-  }, [dispatch])
 
   return (
     <div>
@@ -29,8 +24,8 @@ function EventCard({event}) {
             <li className='muted'>City, CA, 95823</li>
           </ul>
             <div className='row-right-bottom'>
-              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
-              <a className='link right-bottom'><NavLink className="unset" to={`/events/${event.id}`}>More Details »</NavLink></a>
+              <a className='link right-bottom pad-right'><NavLink className="unset" to={{pathname: `/events/${event.id}/edit`, event: {event}}}>Edit »</NavLink></a>
+              <a className='link right-bottom'><NavLink className="unset" to={{pathname: `/events/${event.id}`, event: {event}}}>More Details »</NavLink></a>
             </div>
         </div>
       </div> : null}
