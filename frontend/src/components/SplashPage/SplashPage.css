@@ -46,4 +46,9 @@
     margin: 2vw;
     margin-left: 4vw;
   }
+
+  form {
+    width: 290px;
+    padding: 20px;
+  }
 }
