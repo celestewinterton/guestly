@@ -10,10 +10,10 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    dispatch(sessionActions.login({ credential, password })).catch(
+    await dispatch(sessionActions.login({ credential, password })).catch(
       async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -21,6 +21,12 @@ function LoginForm() {
     );
     history.push("/events")
   };
+
+  const demo = async (e) => {
+    e.preventDefault();
+    await dispatch(sessionActions.login({credential: 'demouser', password: 'password'}));
+    return history.push("/events");
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -48,11 +54,8 @@ function LoginForm() {
           required
         />
       </label>
-      <button type="submit">Log In</button>
-      <button onClick={() => {
-        dispatch(sessionActions.login({credential: 'demouser', password: 'password'}))
-        return history.push("/events")
-      }}>Demo</button>
+      <button type="submit" onClick={(e) => handleSubmit(e)}>Log In</button>
+      <button onClick={(e) => demo(e)}>Demo</button>
     </form>
   );
 }

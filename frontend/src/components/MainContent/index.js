@@ -32,7 +32,7 @@ function MainContent({isLoaded}) {
           </div>
       </NavLink>}
       <div>
-        {events ? <div><h3>Planning</h3><div>{
+        {events ? <div><h3 className='center'>Planning</h3><div>{
         Object.values(events).map(event => <EventCard key={event?.id} event={event} />
         )}</div>
           <NavLink to='/events/new'>

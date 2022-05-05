@@ -10,7 +10,6 @@ function RSVPCard({rsvp}) {
   const events = useSelector(state => state.events)
   const event = Object.values(events).find(event => event.id === rsvp.eventId)
   const myRSVP = sessionUser.id === rsvp.userId;
-  console.log( rsvp,", ", Object.values(events))
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));

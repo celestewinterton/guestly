@@ -17,9 +17,18 @@ function Navigation({ isLoaded }){
     setSearchResults(true)
   }, [query])
 
+  let logoLinks;
   let sessionLinks;
   let searchBar
   if (sessionUser) {
+    logoLinks = (
+      <>
+        <NavLink to="/events">
+          <img className="logo" src='https://user-images.githubusercontent.com/96894806/165988112-135e5b6f-5ee6-4e64-aadd-a12c9cc66559.png'></img>
+        </NavLink>
+        <NavLink className="guestly" to="/events">Guestly</NavLink>
+      </>
+    )
     searchBar = (
       <div className='search-bar'>
         <input
@@ -38,6 +47,14 @@ function Navigation({ isLoaded }){
       </>
     );
   } else {
+    logoLinks = (
+      <>
+        <NavLink exact to="/">
+          <img className="logo" src='https://user-images.githubusercontent.com/96894806/165988112-135e5b6f-5ee6-4e64-aadd-a12c9cc66559.png'></img>
+        </NavLink>
+        <NavLink className="guestly" exact to="/">Guestly</NavLink>
+      </>
+    )
     sessionLinks = (
       <>
         <NavLink className="nav-button" exact to="/">Home</NavLink>
@@ -52,10 +69,11 @@ function Navigation({ isLoaded }){
     <div>
       <div className='navbar'>
         <div className='nav-left'>
-          <NavLink exact to="/">
+          {isLoaded && logoLinks}
+          {/* <NavLink exact to="/">
             <img className="logo" src='https://user-images.githubusercontent.com/96894806/165988112-135e5b6f-5ee6-4e64-aadd-a12c9cc66559.png'></img>
           </NavLink>
-          <NavLink className="guestly" exact to="/">Guestly</NavLink>
+          <NavLink className="guestly" exact to="/">Guestly</NavLink> */}
           {isLoaded && searchBar}
         </div>
         <div className='nav-right'>

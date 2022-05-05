@@ -9,21 +9,21 @@ function SignupForm() {
   const dispatch = useDispatch();
   const history = useHistory();
   const sessionUser = useSelector((state) => state.session.user);
-  const [firstName, setFirstName] = useState(sessionUser?.firstName);
-  const [lastName, setLastName] = useState(sessionUser?.lastName);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/events" />;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      dispatch(sessionActions.signup({ email, username, password }))
+      await dispatch(sessionActions.signup({ firstName, lastName, email, username, password }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -32,6 +32,12 @@ function SignupForm() {
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
+
+  const demo = async (e) => {
+    e.preventDefault();
+    await dispatch(sessionActions.login({credential: 'demouser', password: 'password'}));
+    return history.push("/events");
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -91,11 +97,8 @@ function SignupForm() {
           required
         />
       </label>
-      <button type="submit">Sign Up</button>
-      <button onClick={() => {
-        dispatch(sessionActions.login({credential: 'demouser', password: 'password'}))
-        return history.push("/events")
-      }}>Demo</button>
+      <button type="submit" onClick={(e) => handleSubmit(e)}>Sign Up</button>
+      <button onClick={(e) => demo(e)}>Demo</button>
     </form>
   );
 }
