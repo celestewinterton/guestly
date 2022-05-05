@@ -5,7 +5,7 @@ module.exports = {
     return queryInterface.bulkInsert('Events', [
       {
         name: "H&H's Wedding",
-        date: "2022-08-27",
+        date: "2023-08-27",
         details: "Save the Date!",
         dresscode: "Teal and Grey",
         numberOfTables: 20,
@@ -43,15 +43,15 @@ module.exports = {
         dresscode: "Cocktail-Formal",
         numberOfTables: 8,
         image: "https://user-images.githubusercontent.com/96894806/167024522-8d30889e-dacf-4aec-947c-785d938c12de.jpeg",
-        userId: 1
+        userId: 4
       }, {
         name: "Kelly & Adam",
-        date: "2024-02-30",
+        date: "2024-02-05",
         details: "TBD",
         dresscode: "Semi-Formal",
         numberOfTables: 12,
         image: "https://user-images.githubusercontent.com/96894806/167024548-364a0cf2-e6c1-42a7-8a02-192a318490ed.jpeg",
-        userId: 1
+        userId: 4
       }
     ], {});
   },
