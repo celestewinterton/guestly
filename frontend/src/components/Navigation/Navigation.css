@@ -122,3 +122,20 @@ font-family: 'Quicksand', sans-serif; */
   color: #6EA3A3;
   font-size: 12px;
 }
+
+.search-results-image {
+  height: 60px;
+  width: 60px;
+  object-fit: cover;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.search-results-li {
+  display: flex;
+  align-items: center;
+}
+
+.search-result-text {
+  padding: 5px 15px;
+}

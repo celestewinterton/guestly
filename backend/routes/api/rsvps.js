@@ -34,7 +34,6 @@ router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
 }));
 
 router.delete('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
-  console.log('===========================> Hello!!!')
   const rsvp = await RSVP.findByPk(req.params.id);
   await rsvp.destroy();
   return res.json(rsvp);

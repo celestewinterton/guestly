@@ -34,7 +34,7 @@ function EventGuest() {
 
   const handleDelete = async (e, id) => {
     e.preventDefault();
-    console.log("ID ===> ", id)
+    // console.log("ID ===> ", id)
     await dispatch(rsvpActions.cancelCurrentRSVP(id));
     history.push("/events")
   }

@@ -1,8 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import * as eventActions from '../../store/events';
-import url from '../MainContent/images/proposal.jpeg';
 import EventGuest from './EventGuest';
 import EventPlanner from './EventPlanner';
 import './EventDetail.css'

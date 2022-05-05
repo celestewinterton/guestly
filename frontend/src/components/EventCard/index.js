@@ -19,7 +19,7 @@ function EventCard({event}) {
         <div className='right'>
           <ul className='event-info'>
             <li><h3><NavLink className="unset" to={`/events/${event.id}`}>{event?.name}</NavLink></h3></li>
-            <li className='muted'>Date: {event?.date}</li>
+            <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
             <li className='muted'>Address: 1234 Street Ave</li>
             <li className='muted'>City, CA, 95823</li>
           </ul>

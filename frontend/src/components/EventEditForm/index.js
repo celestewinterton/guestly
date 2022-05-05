@@ -12,13 +12,14 @@ function EventEditForm() {
   const sessionUser = useSelector(state => state.session.user);
   const {eventId} = useParams();
   const events = useSelector(state => state.events)
-  const event = Object.values(events).find(event => event.id === parseInt(eventId))
-  let myEvent = event.userId === sessionUser.id
+  const event = Object.values(events)?.find(event => event.id === parseInt(eventId))
+  let myEvent = event?.userId === sessionUser?.id
 
-  const [name, setName] = useState(event.name);
-  const [date, setDate] = useState((`${event.date}`).slice(0, 10));
-  const [details, setDetails] = useState(event.details);
-  const [dresscode, setDresscode] = useState(event.dresscode);
+  const [name, setName] = useState(event?.name);
+  const [date, setDate] = useState((`${event?.date}`).slice(0, 10));
+  const [details, setDetails] = useState(event?.details);
+  const [dresscode, setDresscode] = useState(event?.dresscode);
+  const [image, setImage] = useState(event?.image);
   const [venue, setVenue] = useState("");
   const [venueStreet, setVenueStreet] = useState("");
   const [venueCity, setVenueCity] = useState("");
@@ -39,7 +40,7 @@ function EventEditForm() {
     setErrors([]);
     setHasSubmitted(true);
 
-    const payload = {...event, name, date, details, dresscode}
+    const payload = {...event, name, date, details, dresscode, image}
     await dispatch(eventActions.editEvent(payload));
 
     history.push("/events")
@@ -96,6 +97,14 @@ function EventEditForm() {
               value={dresscode}
               onChange={(e) => setDresscode(e.target.value)}
               placeholder={dresscode ? dresscode : "Example: Black-Tie Attire or Semi-Formal"}
+            />
+          </label>
+          <label>
+            Cover Photo
+            <input
+              type="text"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
             />
           </label>
           <button type="submit">Save</button>
