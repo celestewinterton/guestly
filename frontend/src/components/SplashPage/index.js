@@ -8,8 +8,8 @@ function SplashPage() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div>
-      <div className="splash-card">
+    <div className='splash'>
+      <div className='splash-card'>
         <form className='splash-form'>
           <h2>Want your guests to choose their own seating?</h2>
           <div className='space'>Sign up for Guestly today so you can skip the seating charts!</div>

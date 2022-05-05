@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-const Search = ({query, setSearchResults}) => {
+const Search = ({query, setQuery, setSearchResults}) => {
   const dispatch = useDispatch();
   const events = useSelector(state => state.events)
   const eventResults = Object.values(events)?.filter(
@@ -36,7 +36,10 @@ const Search = ({query, setSearchResults}) => {
         <h4>Events</h4>
           <ul>{eventResults.length ? eventResults.map(event =>
             <li key={`event-${event.id}`}>
-              <NavLink className='unset link' to={`/events/${event.id}`} onClick={e=>setSearchResults(false)}>
+              <NavLink className='unset link' to={`/events/${event.id}`} onClick={e => {
+                setSearchResults(false)
+                setQuery('')
+                }}>
                 {formatResult(event.name)}
               </NavLink>
             </li>)

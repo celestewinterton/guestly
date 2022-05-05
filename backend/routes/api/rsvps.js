@@ -16,12 +16,12 @@ router.get('/', requireAuth, asyncHandler(async (req, res) => {
 }));
 
 router.post('/', requireAuth, asyncHandler(async (req, res) => {
-  const { plusOne, selfDietary, plusOneDietary } = req.body;
+  const { plusOne, selfDietary, plusOneDietary, notes, eventId } = req.body;
   const userId = req.user.id;
-  const eventId = ""; //TBD
+  // const eventId = req.params.id
 
   const rsvp = await RSVP.create({
-    plusOne, selfDietary, plusOneDietary, eventId, userId,
+    plusOne, selfDietary, plusOneDietary, notes, eventId, userId,
   });
 
   return res.json(rsvp);

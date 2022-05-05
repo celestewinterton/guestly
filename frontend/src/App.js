@@ -11,6 +11,7 @@ import EventEditForm from "./components/EventEditForm";
 import EventDetail from "./components/EventDetail";
 import CalendarPage from "./components/Calendar";
 import Search from "./components/Search";
+import EventGuest from "./components/EventDetail/EventGuest";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,11 +41,11 @@ function App() {
             <Route path="/events">
               <MainContent />
             </Route>
+            <Route path="/rsvps/:rsvp">
+              <EventDetail />
+            </Route>
             {/*
             <Route path="/rsvps">
-              <MainContent isLoaded={isLoaded} />
-            </Route>
-            <Route path="/rsvps/:rsvpId">
               <MainContent isLoaded={isLoaded} />
             </Route>
             <Route path="/seating-configuration">

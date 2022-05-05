@@ -24,7 +24,7 @@ function SearchInput({ isLoaded }){
           value={query}
           onChange={e=>setQuery(e.target.value)}
           onClick={e => e.stopPropagation}/>
-          {searchResults && <Search query={query} setSearchResults={setSearchResults}/>}
+          {searchResults && <Search query={query} setQuery={setQuery} setSearchResults={setSearchResults}/>}
       </div>}
     </div>
   )

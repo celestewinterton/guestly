@@ -4,15 +4,24 @@ import { NavLink, useParams } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import * as rsvpActions from '../../store/rsvps';
 import url from '../MainContent/images/proposal.jpeg';
+import { useHistory } from 'react-router';
 
 function EventPlanner({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const rsvps = useSelector(state => state.rsvp);
+  const history = useHistory();
+  const {eventId} = useParams();
 
   useEffect(() => {
     dispatch(rsvpActions.showRSVPs(rsvps));
   }, [dispatch])
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(eventActions.cancelCurrentEvent(eventId));
+    history.push("/events")
+  }
 
   return (
     <div className='center'>
@@ -37,6 +46,7 @@ function EventPlanner({event}) {
           </ul>
             <div className='row-right-bottom'>
               <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
+              <button className="link unset right-bottom pad-right" onClick={handleDelete}>Cancel Event »</button>
               <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
           </div>
         </div>
