@@ -28,13 +28,11 @@ function EventForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors([]);
+    // setErrors([]);
     setHasSubmitted(true);
 
     const payload = {name, date, details, dresscode}
     await dispatch(eventActions.createNewEvent(payload));
-    // if (event) {
-    // }
 
     history.push("/events")
     setName('');

@@ -12,10 +12,13 @@ module.exports = {
         type: Sequelize.STRING(50)
       },
       plusOne: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.STRING(100)
       },
       plusOneDietary: {
         type: Sequelize.STRING(50)
+      },
+      notes: {
+        type: Sequelize.STRING(250)
       },
       userId: {
         type: Sequelize.INTEGER,

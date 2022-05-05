@@ -26,7 +26,7 @@ function EventPlanner({event}) {
 
         </div>
         <div className='card-image'>
-          <img className='card-image-format' src={url} alt='Wedding'></img>
+          <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>
         <div className='right'>
           <ul className='event-info'>

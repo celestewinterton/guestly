@@ -8,6 +8,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      selection: {
+        type: Sequelize.STRING(50),
+      },
       tableId: {
         type: Sequelize.INTEGER,
         references: {model: "Tables"}

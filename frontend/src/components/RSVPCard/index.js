@@ -21,7 +21,7 @@ function RSVPCard({rsvp}) {
       {myRSVP ?
       <div className='card'>
         <div className='card-image'>
-          <img className='card-image-format' src={url} alt='Wedding'></img>
+          <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>
         <div className='right'>
           <ul className='rsvp-info'>
@@ -32,8 +32,8 @@ function RSVPCard({rsvp}) {
             <li className='muted'>{rsvp?.plusOneDietary}</li>
           </ul>
           <div className='row-right-bottom'>
-              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp.id}/edit`}>Edit »</NavLink></a>
-              <a className='link right-bottom'><NavLink className="unset" to={`/events/${event.id}`}>More Details »</NavLink></a>
+              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp?.id}/edit`}>Edit »</NavLink></a>
+              <a className='link right-bottom'><NavLink className="unset" to={`/events/${event?.id}`}>More Details »</NavLink></a>
           </div>
         </div>
       </div> : null}

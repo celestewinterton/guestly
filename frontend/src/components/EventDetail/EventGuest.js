@@ -4,12 +4,13 @@ import { NavLink, useParams } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import * as rsvpActions from '../../store/rsvps';
 import url from '../MainContent/images/proposal.jpeg';
+import RSVPFormModal from '../RSVPFormModal';
 
 function EventGuest({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const rsvps = useSelector(state => state.rsvps);
-  const rsvp = Object.values(rsvps)?.find(rsvp => rsvp.eventId === event.id);
+  const rsvp = Object.values(rsvps)?.find(rsvp => rsvp?.eventId === event?.id);
   // console.log("GUEST VIEW =====>", rsvps, rsvp)
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function EventGuest({event}) {
     <div className='center'>
       <div className='large-card'>
         <div className='card-image'>
-          <img className='card-image-format' src={url} alt='Wedding'></img>
+          <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>
         <div className='right'>
           <ul className='event-info'>
@@ -38,7 +39,7 @@ function EventGuest({event}) {
                 <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
               </div>
             </div>
-            : <div className='row-right-bottom'><button className='teal-button'>RSVP</button></div>}
+            : <RSVPFormModal />}
           </div>
         </div>
       </div>

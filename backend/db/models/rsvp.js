@@ -2,8 +2,9 @@
 module.exports = (sequelize, DataTypes) => {
   const RSVP = sequelize.define('RSVP', {
     selfDietary: DataTypes.STRING,
-    plusOne: DataTypes.BOOLEAN,
+    plusOne: DataTypes.STRING,
     plusOneDietary: DataTypes.STRING,
+    notes: DataTypes.STRING,
     userId: DataTypes.INTEGER,
     eventId: DataTypes.INTEGER
   }, {});

@@ -116,7 +116,7 @@ label {
   font-size: 12px;
 }
 
-input, input[type=date], textarea {
+input, input[type=date], textarea, .input {
   border: 1px solid #CCC;
   box-sizing: border-box;
   display: block;

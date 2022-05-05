@@ -33,6 +33,7 @@ function SignupForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Sign up for your account!</h3>
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>
@@ -73,6 +74,10 @@ function SignupForm() {
         />
       </label>
       <button type="submit">Sign Up</button>
+      <button onClick={() => {
+        dispatch(sessionActions.login({credential: 'demouser', password: 'password'}))
+        return history.push("/events")
+      }}>Demo</button>
     </form>
   );
 }

@@ -23,6 +23,9 @@ module.exports = {
       numberOfTables: {
         type: Sequelize.INTEGER
       },
+      image: {
+        type: Sequelize.STRING(250)
+      },
       venueId: {
         type: Sequelize.INTEGER
       },

@@ -24,6 +24,7 @@ function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h3>Log into your account!</h3>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
@@ -48,6 +49,10 @@ function LoginForm() {
         />
       </label>
       <button type="submit">Log In</button>
+      <button onClick={() => {
+        dispatch(sessionActions.login({credential: 'demouser', password: 'password'}))
+        return history.push("/events")
+      }}>Demo</button>
     </form>
   );
 }
