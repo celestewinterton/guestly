@@ -52,7 +52,16 @@ module.exports = {
         numberOfTables: 12,
         image: "https://user-images.githubusercontent.com/96894806/167024548-364a0cf2-e6c1-42a7-8a02-192a318490ed.jpeg",
         userId: 4
+      }, {
+        name: "Tyler & Amy",
+        date: "2022-11-05",
+        details: "TBD",
+        dresscode: "Formal",
+        numberOfTables: 15,
+        image: "https://user-images.githubusercontent.com/96894806/167048755-bc63428a-7229-4d62-b5b6-9812d2ea1539.jpeg",
+        userId: 4
       }
+
     ], {});
   },
 
