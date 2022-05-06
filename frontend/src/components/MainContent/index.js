@@ -27,7 +27,7 @@ function MainContent({isLoaded}) {
     <div className='main-content-container'>
       <h2>Upcoming Events!</h2>
       <div>
-        {events ? <div><h3 className='text-center'>Planning</h3><div>{
+        {events ? <div><h3 className=''>Planning</h3><div>{
         Object.values(events).map(event => <EventCard key={event?.id} event={event} />
         )}</div>
           <NavLink to='/events/new'>

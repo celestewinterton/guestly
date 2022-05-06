@@ -20,7 +20,7 @@ function EventDetail() {
 
   return (
     <div>
-      {host ? <EventPlanner event={event} />
+      {host ? <><EventPlanner event={event} /></>
       : <EventGuest event={event} />}
     </div>
   )
