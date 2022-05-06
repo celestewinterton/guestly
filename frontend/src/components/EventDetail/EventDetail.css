@@ -8,7 +8,7 @@
   grid-template-areas:
     "img nav nav"
     "img main main"
-    "img foot .";
+    "img foot foot-table";
 }
 
 .large-card-nav {
@@ -30,7 +30,7 @@
 .large-card-main {
   grid-area: main;
   display: flex;
-  align-items: flex-start;
+  /* justify-content: ; */
   /* height: 100%; */
 }
 
@@ -42,6 +42,13 @@
   padding: 5px 20px;
 }
 
+.large-card-table-foot {
+  grid-area: foot-table;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+}
+
 .event-image-format {
   max-height: 500px;
   max-width: 400px;
@@ -49,10 +56,19 @@
   margin: 10px;
 }
 
+td, th {
+  border: 1px solid #CCC;
+  padding: 5px;
+}
+
 .right {
-  color: red;
   display: flex;
   flex-direction: column;
+}
+
+.transparent, .transparent:hover {
+  color: transparent;
+  text-decoration: none;
 }
 
 /********* mobile *******************/

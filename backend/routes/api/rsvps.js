@@ -10,7 +10,7 @@ const router = express.Router();
 router.get('/', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.user.id;
   const rsvps = await RSVP.findAll({
-    include: Event
+    include: [Event, User]
   });
   return res.json(rsvps)
 }));

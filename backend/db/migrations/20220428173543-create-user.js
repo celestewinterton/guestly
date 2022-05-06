@@ -8,11 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      firstName: {
-        type: Sequelize.STRING(50)
-      },
-      lastName: {
-        type: Sequelize.STRING(50)
+      fullname: {
+        type: Sequelize.STRING(100)
       },
       username: {
         type: Sequelize.STRING(50),

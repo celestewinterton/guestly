@@ -47,7 +47,7 @@ function EventPlanner({event}) {
             {/* <NavLink className='nav-button' to="">Registry</NavLink> */}
         </div>
         <div className='large-card-foot'>
-          <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
+          <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event?.id}/edit`}>Edit »</NavLink></a>
           <button className="link unset right-bottom pad-right" onClick={handleDelete}>Cancel Event »</button>
           <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
         </div>

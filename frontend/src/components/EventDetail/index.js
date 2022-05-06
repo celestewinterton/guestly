@@ -4,6 +4,8 @@ import { useParams, NavLink } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import EventGuest from './EventGuest';
 import EventPlanner from './EventPlanner';
+import Guestlist from './Guestlist';
+import SeatingConfig from '../SeatingConfig';
 import './EventDetail.css'
 
 function EventDetail() {
@@ -13,7 +15,9 @@ function EventDetail() {
   const events = useSelector(state => state.events)
   const event = Object.values(events)?.find(event => event.id === parseInt(eventId))
   let host = event?.userId === sessionUser?.id;
-  const [show, setShow] = useState(false);
+  const [showEvent, setShowEvent] = useState(true);
+  const [showGuests, setShowGuests] = useState(false);
+  const [showSeating, setShowSeating] = useState(false);
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
@@ -24,14 +28,33 @@ function EventDetail() {
       {host ?
       <>
         <div className='large-card-nav'>
-            <div className='nav-button'>My Event</div>
-            <div className='nav-button'>Guestlist</div>
-            {/* <NavLink className='nav-button' to="">Seating</NavLink> */}
-            {/* <NavLink className='nav-button' to="">Registry</NavLink> */}
+            <button className='nav-button' onClick={() => {
+              setShowEvent(true)
+              setShowGuests(false)
+              setShowSeating(false)
+            }}>My Event</button>
+            <button className='nav-button' onClick={() => {
+              setShowEvent(false)
+              setShowGuests(true)
+              setShowSeating(false)
+            }}>Guestlist</button>
+            {/* <button className='nav-button' onClick={() => {
+              setShowEvent(false)
+              setShowGuests(false)
+              setShowSeating(true)
+            }}>Seating</button> */}
         </div>
-        <EventPlanner event={event} />
+        {showEvent && <EventPlanner event={event}/>}
+        {showGuests && <Guestlist event={event}/>}
+        {/* {showSeating && <SeatingConfig event={event}/>} */}
       </>
-      : <EventGuest event={event} />}
+      :
+      <>
+        <div className='large-card-nav'>
+          <button className='transparent nav-button'>Nav</button>
+        </div>
+        <EventGuest event={event}/>
+      </>}
     </div>
   )
 }

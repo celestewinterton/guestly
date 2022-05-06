@@ -4,8 +4,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
+    fullname: DataTypes.STRING,
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -50,8 +49,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   User.prototype.toSafeObject = function() { // remember, this cannot be an arrow function
-    const { id, firstName, lastName, username, email } = this; // context will be the User instance
-    return { id, firstName, lastName, username, email };
+    const { id, fullname, username, email } = this; // context will be the User instance
+    return { id, fullname, username, email };
   };
 
   User.prototype.validatePassword = function (password) {
@@ -77,10 +76,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
 
-  User.signup = async function ({ firstName, lastName, username, email, password }) {
+  User.signup = async function ({ fullname, username, email, password }) {
     const hashedPassword = bcrypt.hashSync(password);
     const user = await User.create({
-      firstName, lastName,
+      fullname,
       username,
       email,
       hashedPassword

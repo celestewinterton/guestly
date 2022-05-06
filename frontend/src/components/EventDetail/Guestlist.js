@@ -6,7 +6,7 @@ import * as rsvpActions from '../../store/rsvps';
 import url from '../MainContent/images/proposal.jpeg';
 import { useHistory } from 'react-router';
 
-function SeatingConfig({event}) {
+function Guestlist({event}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const rsvps = useSelector(state => state.rsvps);
@@ -28,15 +28,27 @@ function SeatingConfig({event}) {
     <div className='center'>
       <div className='large-card'>
         <div className='large-card-main'>
-          <h2>{event?.name} Seating Chart</h2>
-            <div>
-                {/* {Object.values(rsvps)?.map(rsvp =>
-                <div>
-                  <div>{rsvp?.User?.fullname}</div>
-                  <div>{rsvp?.plusOne}</div>
-                </div>
-                )} */}
-            </div>
+          <table className='guestlist-table'>
+            <thead><h2>{event?.name} Guestlist</h2>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Plus One</th>
+                <th>Dietary (guest)</th>
+                <th>Dietary (plus one)</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+                {Object.values(rsvps)?.map(rsvp =>
+                <tbody>
+                  <td>{rsvp?.User?.fullname}</td>
+                  <td>{rsvp?.plusOne}</td>
+                  <td>{rsvp?.selfDietary}</td>
+                  <td>{rsvp?.plusOneDietary}</td>
+                  <td>{rsvp?.plusOne ? 2 : 1}</td>
+                </tbody>
+                )}
+            </table>
         </div>
         <div className='large-card-table-foot'>
           <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
@@ -48,4 +60,4 @@ function SeatingConfig({event}) {
   )
 }
 
-export default SeatingConfig
+export default Guestlist;
