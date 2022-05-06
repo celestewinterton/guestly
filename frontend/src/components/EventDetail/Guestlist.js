@@ -31,8 +31,7 @@ function Guestlist({event}) {
           <table className='guestlist-table'>
             <thead><h2>{event?.name} Guestlist</h2>
               <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Guest Name</th>
                 <th>Plus One</th>
                 <th>Dietary (guest)</th>
                 <th>Dietary (plus one)</th>
