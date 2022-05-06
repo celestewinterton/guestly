@@ -42,6 +42,7 @@ function Navigation({ isLoaded }){
     )
     sessionLinks = (
       <>
+        <NavLink className="nav-button" exact to="/calendar">Calendar</NavLink>
         {/* <NavLink className="nav-button" exact to="/events">Home</NavLink> */}
         <ProfileButton user={sessionUser} />
       </>

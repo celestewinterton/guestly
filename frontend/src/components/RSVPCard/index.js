@@ -8,8 +8,8 @@ function RSVPCard({rsvp}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const events = useSelector(state => state.events)
-  const event = Object.values(events).find(event => event.id === rsvp.eventId)
-  const myRSVP = sessionUser.id === rsvp.userId;
+  const event = Object.values(events)?.find(event => event.id === rsvp.eventId)
+  const myRSVP = sessionUser?.id === rsvp?.userId;
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
