@@ -35,7 +35,7 @@ router.post('/', requireAuth , asyncHandler(async (req, res) => {
   return res.json(event);
 }));
 
-router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
+router.put('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
   const event = await Event.findByPk(req.params.id);
   const newEvent = await event.update(req.body);
   return res.json(newEvent);

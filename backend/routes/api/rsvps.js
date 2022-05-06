@@ -27,7 +27,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
   return res.json(rsvp);
 }));
 
-router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
+router.put('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
   const rsvp = await RSVP.findByPk(req.params.id);
   const updatedRsvp = await rsvp.update(req.body);
   console.log(req.params.rsvpId)
