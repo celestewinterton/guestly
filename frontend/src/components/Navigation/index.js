@@ -58,7 +58,7 @@ function Navigation({ isLoaded }){
     )
     sessionLinks = (
       <>
-        <NavLink className="nav-button" exact to="/">Home</NavLink>
+        {/* <NavLink className="nav-button" exact to="/">Home</NavLink> */}
         <LoginFormModal />
         <SignupFormModal />
         {/* <NavLink className="nav-button" to="/signup">Sign Up</NavLink> */}

@@ -32,6 +32,10 @@ nav .profile-dropdown {
   all: unset;
 }
 
+.home-and-profile-container:first-child {
+  margin: .0em .5em .0em 0em;
+}
+
 /* #EDABA2 #F8F2EE #6EA3A3 #006767 #004D4D */
 .navbar {
   /* background-color: #f8f2ee89; */
@@ -42,7 +46,7 @@ nav .profile-dropdown {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   padding: 5px;
   position: fixed;
 }
@@ -57,11 +61,12 @@ nav .profile-dropdown {
 .guestly {
   font-family: 'Cookie';
   font-size: 28px;
-  padding: 0em .5em;
+  margin: 5px 15px;
   color: black;
   text-decoration: none;
-  display: flex;
-  align-items: center;
+  padding: 5px 5px;
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .nav-left {
@@ -103,8 +108,8 @@ font-family: 'Quicksand', sans-serif; */
 .search-bar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: 10px;
+  /* justify-content: center; */
+  margin: 15px 10px;
 }
 
 .search-input {

@@ -35,7 +35,7 @@ function ProfileButton({ user }) {
   return (
     <div className="profile-container">
       <div className="home-and-profile-container">
-        <NavLink className="nav-button" to="/events">Home</NavLink>
+        <NavLink className="nav-button home-button" to="/events">Home</NavLink>
         <button className="unset" onClick={openMenu}>
           <img className="profile-button" src="https://user-images.githubusercontent.com/96894806/165993910-02f51943-22cf-4c54-8edc-dc071458779a.png" alt="profile"></img>
         </button>
