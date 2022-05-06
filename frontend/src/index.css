@@ -27,12 +27,6 @@ ul {
   list-style-type: none;
 }
 
-.page-content {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-
 .error {
   color: red;
   min-height: 24px;
@@ -52,6 +46,12 @@ ul {
   text-align: center;
 }
 
+.page-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 /************** app background *************/
 body {
   background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
@@ -63,14 +63,30 @@ body {
 
 .overlay {
   background-color: #f8f2eec1;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  /* bottom: 0px;
-  margin: 0 auto; */
-  min-height: 100vh;
-  min-width: 100vw;
+  bottom: 0px;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+}
+
+.appGrid {
+  display: grid;
+  grid-template-areas:
+  "appNav"
+  "appMain";
+}
+
+.appNav {
+  grid-area: appNav;
+}
+
+.appMain {
+  grid-area: appMain;
 }
 
 /************ forms and buttons ************/

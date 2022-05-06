@@ -42,29 +42,27 @@ function EventGuest() {
   return (
     <div className='center'>
       <div className='large-card'>
-        <div className='card-image'>
-          <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
+        <div className='large-card-image'>
+          <img className='event-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>
-        <div className='right'>
+        <div className='large-card-main'>
           <ul className='event-info'>
-            <li><h3><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h3></li>
+            <li><h2><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h2></li>
             <li className='muted'>Date: {event?.date}</li>
             <li className='muted'>Address: 1234 Street Ave</li>
             <li className='muted'>City, CA, 95823</li>
           </ul>
-            <div className='row-right-bottom'>
-            {rsvp ?
-            <div>
-              <div className='muted already-attending'>Already attending!</div>
-              <div className='row-right-bottom'>
-                <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp?.id}/edit`}>Edit »</NavLink></a>
-                <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
-                <button className="link unset right-bottom" onClick={(e) => handleDelete(e, rsvp.id)}>Cancel RSVP</button>
-              </div>
-            </div>
-            : <RSVPFormModal />}
-          </div>
         </div>
+        {rsvp ?
+        <div className='large-card-nav'>
+          <h4 className='muted already-attending'>Already attending!</h4>
+        </div> : <RSVPFormModal />}
+        {rsvp ?
+        <div className='large-card-foot'>
+          <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp?.id}/edit`}>Edit »</NavLink></a>
+          <button className="link unset right-bottom pad-right" onClick={(e) => handleDelete(e, rsvp.id)}>Cancel RSVP</button>
+          <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
+        </div> : null}
       </div>
     </div>
   )

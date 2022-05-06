@@ -26,29 +26,26 @@ function EventPlanner({event}) {
   return (
     <div className='center'>
       <div className='large-card'>
-        <div className='nav-left'>
-          <nav>
-            <NavLink className='nav-button' to="">Guestlist</NavLink>
-            <NavLink className='nav-button' to="">Seating</NavLink>
-            <NavLink className='nav-button' to="">Registry</NavLink>
-          </nav>
-
+        <div className='large-card-image'>
+          <img className='event-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>
-        <div className='card-image'>
-          <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
-        </div>
-        <div className='right'>
+        <div className='large-card-main'>
           <ul className='event-info'>
-            <li><h3><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h3></li>
+            <li><h2><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h2></li>
             <li className='muted'>Date: {event?.date}</li>
             <li className='muted'>Address: 1234 Street Ave</li>
             <li className='muted'>City, CA, 95823</li>
           </ul>
-            <div className='row-right-bottom'>
-              <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
-              <button className="link unset right-bottom pad-right" onClick={handleDelete}>Cancel Event »</button>
-              <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
-          </div>
+        </div>
+        <div className='large-card-nav'>
+            <NavLink className='nav-button' to="">Guestlist</NavLink>
+            <NavLink className='nav-button' to="">Seating</NavLink>
+            <NavLink className='nav-button' to="">Registry</NavLink>
+        </div>
+        <div className='large-card-foot'>
+          <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>
+          <button className="link unset right-bottom pad-right" onClick={handleDelete}>Cancel Event »</button>
+          <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
         </div>
       </div>
     </div>

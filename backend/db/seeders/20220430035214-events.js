@@ -34,7 +34,7 @@ module.exports = {
         details: "More details to come...",
         dresscode: "Cocktail-Formal",
         numberOfTables: 10,
-        image: "https://user-images.githubusercontent.com/96894806/167018667-334b5921-8fc7-421d-a98b-79385c897277.jpeg",
+        image: "https://user-images.githubusercontent.com/96894806/167048731-55f4334e-1959-4f66-9f83-f60e64d2c109.jpeg",
         userId: 1
       }, {
         name: "Katie and John",
