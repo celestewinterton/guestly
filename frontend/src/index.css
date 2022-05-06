@@ -27,6 +27,13 @@ ul {
   list-style-type: none;
 }
 
+.teal {
+  color: #004D4D;
+  font-size: .8em;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
 .error {
   color: red;
   min-height: 24px;
@@ -52,6 +59,10 @@ ul {
   margin-top: 100px;
 }
 
+.large-card, form, .card {
+  box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.25);
+}
+
 /************** app background *************/
 body {
   background: url(../public/images/wide-dinner.jpeg) no-repeat center center fixed;
@@ -62,31 +73,13 @@ body {
 }
 
 .overlay {
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: #f8f2eec1;
-  position: fixed;
   top: 0px;
   left: 0px;
   right: 0px;
-  bottom: 0px;
-  margin: 0 auto;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-}
-
-.appGrid {
-  display: grid;
-  grid-template-areas:
-  "appNav"
-  "appMain";
-}
-
-.appNav {
-  grid-area: appNav;
-}
-
-.appMain {
-  grid-area: appMain;
+  position: absolute;
 }
 
 /************ forms and buttons ************/
@@ -183,4 +176,8 @@ select {
   /* button {
     background-color: red;
   } */
+
+  .overlay {
+    width: 500px;
+  }
 }

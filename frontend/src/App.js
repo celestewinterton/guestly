@@ -11,7 +11,7 @@ import EventEditForm from "./components/EventEditForm";
 import EventDetail from "./components/EventDetail";
 import CalendarPage from "./components/Calendar";
 import Search from "./components/Search";
-import EventGuest from "./components/EventDetail/EventGuest";
+import RSVPEditForm from "./components/RSVPEditFrom";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,54 +22,53 @@ function App() {
 
   return (
     <>
-      <div className='appGrid'>
-        <div className='appNav'>
-          <Navigation isLoaded={isLoaded} />
-        </div>
-        <div className='page-content appMain'>
-          {isLoaded && (
-            <Switch>
-              <Route exact path="/">
-                <SplashPage />
-              </Route>
-              <Route path="/events/new">
-                <EventForm />
-              </Route>
-              <Route path="/events/:eventId/edit">
-                <EventEditForm />
-              </Route>
-              <Route path="/events/:eventId">
-                <EventDetail />
-              </Route>
-              <Route path="/events">
-                <MainContent />
-              </Route>
-              <Route path="/rsvps/:rsvp">
-                <EventDetail />
-              </Route>
-              {/*
-              <Route path="/rsvps">
-                <MainContent isLoaded={isLoaded} />
-              </Route>
-              <Route path="/seating-configuration">
-                <SeatingConfig />
-              </Route>
-              */}
-              <Route path="/calendar">
-                <CalendarPage />
-              </Route>
-              <Route path="/search">
-                <Search />
-              </Route>
-              <Route path="/about">
-                {/* <About /> */}
-              </Route>
-              <Route>
-                <h2>Page Not Found</h2>
-              </Route>
-            </Switch>
-          )}
-        </div>
+      <Navigation isLoaded={isLoaded} />
+      <div className='page-content'>
+        {isLoaded && (
+          <Switch>
+            <Route exact path="/">
+              <SplashPage />
+            </Route>
+            <Route path="/events/new">
+              <EventForm />
+            </Route>
+            <Route path="/events/:eventId/edit">
+              <EventEditForm />
+            </Route>
+            <Route path="/events/:eventId">
+              <EventDetail />
+            </Route>
+            <Route path="/events">
+              <MainContent />
+            </Route>
+            <Route path="/rsvps/:rsvpId/edit">
+              <RSVPEditForm />
+            </Route>
+            <Route path="/rsvps/:rsvp">
+              <EventDetail />
+            </Route>
+            {/*
+            <Route path="/rsvps">
+              <MainContent isLoaded={isLoaded} />
+            </Route>
+            <Route path="/seating-configuration">
+              <SeatingConfig />
+            </Route>
+            */}
+            <Route path="/calendar">
+              <CalendarPage />
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/about">
+              {/* <About /> */}
+            </Route>
+            <Route>
+              <h2>Page Not Found</h2>
+            </Route>
+          </Switch>
+        )}
       </div>
     </>
   );

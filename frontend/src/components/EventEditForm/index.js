@@ -109,7 +109,7 @@ function EventEditForm() {
           </label>
           <button type="submit">Save</button>
         </form>
-          <button className="link unset right-bottom" onClick={handleDelete}>Cancel Event</button>
+          {/* <button className="link unset right-bottom" onClick={handleDelete}>Cancel Event</button> */}
       </div>
     </div>
   )

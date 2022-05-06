@@ -32,15 +32,19 @@ function EventPlanner({event}) {
         <div className='large-card-main'>
           <ul className='event-info'>
             <li><h2><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h2></li>
-            <li className='muted'>Date: {event?.date}</li>
-            <li className='muted'>Address: 1234 Street Ave</li>
-            <li className='muted'>City, CA, 95823</li>
+            <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
+            <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "TBD"}</li>
+            <li className='muted'>Address: {event?.Venue ?
+            <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
+            : "TBD"}</li>
+            <li className='muted'><br/>Details: {event?.details}</li>
+            <li className='muted'>Dresscode: {event?.dresscode}</li>
           </ul>
         </div>
         <div className='large-card-nav'>
             <NavLink className='nav-button' to="">Guestlist</NavLink>
             <NavLink className='nav-button' to="">Seating</NavLink>
-            <NavLink className='nav-button' to="">Registry</NavLink>
+            {/* <NavLink className='nav-button' to="">Registry</NavLink> */}
         </div>
         <div className='large-card-foot'>
           <a className='link right-bottom pad-right'><NavLink className="unset" to={`/events/${event.id}/edit`}>Edit »</NavLink></a>

@@ -35,13 +35,18 @@ function CalendarPage() {
         />
         <div>
           <div>{thisDate.length ?
-          <div className='right'>{thisDate.map(event =>
-            <ul className='event-info'>
-              <a className='unset' href={`/events/${event?.id}`}><h2>{event?.name}</h2></a>
-              <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
-              <li>Address: {event?.address}</li>
-              <li>Details: {event?.details}</li>
-              <li>Dresscode: {event?.dresscode}</li>
+            <div>{thisDate.map(event =>
+              <ul>
+                <div className='calendar-event-container'>
+                    <img className='card-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
+                  <div className='calendar-event-info'>
+                    <a className='unset' href={`/events/${event?.id}`}><h2>{event?.name}</h2></a>
+                    <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "Coming soon"}</li>
+                    <li className='muted'>Address: {event?.Venue ?
+                    <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
+                    : "Coming soon"}</li>
+                  </div>
+                </div>
             </ul>)}
           </div>
           : <h2>No events this day</h2>}</div>

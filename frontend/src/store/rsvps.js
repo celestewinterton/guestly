@@ -46,7 +46,7 @@ export const editRSVP = (payload) => async dispatch => {
     headers: {'ContentType': 'application/json'},
     body: JSON.stringify(payload)
   })
-
+  console.log(payload, "<=========???")
   if (response.ok) {
     const rsvp = await response.json();
     dispatch(updateRSVPs(rsvp));
@@ -90,6 +90,7 @@ const rsvpsReducer = (state = initialState, action) => {
         ...state,
         [action.rsvp.id]: action.rsvp,
       };
+      console.log(newState, "<==============")
       return newState;
     case CANCEL:
       newState = {...state}

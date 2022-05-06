@@ -60,3 +60,16 @@ div > .react-calendar__tile--active:enabled:hover {
 div > .react-calendar__month-view__days__day--weekend {
   color: teal;
 }
+
+.calendar-event-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.calendar-event-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 20px;
+  margin-top: 0px;
+}

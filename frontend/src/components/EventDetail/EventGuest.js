@@ -48,15 +48,26 @@ function EventGuest() {
         <div className='large-card-main'>
           <ul className='event-info'>
             <li><h2><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h2></li>
-            <li className='muted'>Date: {event?.date}</li>
-            <li className='muted'>Address: 1234 Street Ave</li>
-            <li className='muted'>City, CA, 95823</li>
+            <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
+            <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "TBD"}</li>
+            <li className='muted'>Address: {event?.Venue ?
+            <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
+            : "TBD"}</li>
+            <li className='muted'><br/>Details: {event?.details}</li>
+            <li className='muted'>Dresscode: {event?.dresscode}</li>
+            {rsvp ? <div>
+              <li className='teal'>My RSVP</li>
+              <li className='muted'>{rsvp?.selfDietary ? <>Dietary restrictions: {rsvp?.selfDietary}</> : null}</li>
+              <li className='muted'>{rsvp?.plusOne ? <>My guest: {rsvp?.plusOne}</> : null}</li>
+              <li className='muted'>{rsvp?.plusOneDietary ? <>My guest's dietary restrictions: {rsvp?.plusOneDietary}</> : null}</li>
+              <li className='muted'>{rsvp?.notes ? <>Special notes: {rsvp?.notes}</> : null}</li>
+            </div> : null}
           </ul>
         </div>
         {rsvp ?
         <div className='large-card-nav'>
           <h4 className='muted already-attending'>Already attending!</h4>
-        </div> : <RSVPFormModal />}
+        </div> : <div className='large-card-nav'><RSVPFormModal /></div>}
         {rsvp ?
         <div className='large-card-foot'>
           <a className='link right-bottom pad-right'><NavLink className="unset" to={`/rsvps/${rsvp?.id}/edit`}>Edit »</NavLink></a>
