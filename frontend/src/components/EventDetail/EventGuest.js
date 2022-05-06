@@ -59,7 +59,7 @@ function EventGuest() {
               <li className='teal'>My RSVP</li>
               <li className='muted'>{rsvp?.selfDietary ? <>Dietary restrictions: {rsvp?.selfDietary}</> : null}</li>
               <li className='muted'>{rsvp?.plusOne ? <>My guest: {rsvp?.plusOne}</> : null}</li>
-              <li className='muted'>{rsvp?.plusOneDietary ? <>My guest's dietary restrictions: {rsvp?.plusOneDietary}</> : null}</li>
+              <li className='muted'>{rsvp?.plusOneDietary ? <>Guest's dietary restrictions: {rsvp?.plusOneDietary}</> : null}</li>
               <li className='muted'>{rsvp?.notes ? <>Special notes: {rsvp?.notes}</> : null}</li>
             </div> : null}
           </ul>

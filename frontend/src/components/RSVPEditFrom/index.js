@@ -12,7 +12,7 @@ function RSVPEditForm() {
   const sessionUser = useSelector(state => state.session.user);
   const rsvps = useSelector(state => state.rsvps);
   const rsvpId = parseInt(useLocation().pathname.split('/')[2]);
-  const rsvp = Object.values(rsvps)?.map(rsvp => rsvpId === rsvp.id);
+  const rsvp = Object.values(rsvps)?.find(rsvp => rsvpId === rsvp.id);
   const eventId = rsvp?.eventId
   const [plusOne, setPlusOne] = useState(rsvp?.plusOne);
   const [selfDietary, setSelfDietary] = useState(rsvp?.selfDietary);
@@ -31,10 +31,10 @@ function RSVPEditForm() {
     e.preventDefault();
     setHasSubmitted(true);
 
-    const payload = {plusOne, plusOneDietary, selfDietary, notes, eventId};
+    const payload = {plusOne, plusOneDietary, selfDietary, notes, eventId, rsvpId};
     await dispatch(rsvpActions.editRSVP(payload));
 
-    history.push("/events")
+    history.push(`/rsvps/${rsvpId}`)
     // setName('');
     setErrors([]);
     setHasSubmitted(false);

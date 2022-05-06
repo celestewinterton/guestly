@@ -41,12 +41,12 @@ export const createNewRSVP = (newRSVP) => async dispatch => {
 }
 
 export const editRSVP = (payload) => async dispatch => {
-  const response = await csrfFetch(`/api/rsvps/${payload.id}`, {
+  const response = await csrfFetch(`/api/rsvps/${payload.rsvpId}`, {
     method: 'PUT',
     headers: {'ContentType': 'application/json'},
     body: JSON.stringify(payload)
   })
-  console.log(payload, "<=========???")
+
   if (response.ok) {
     const rsvp = await response.json();
     dispatch(updateRSVPs(rsvp));
@@ -90,7 +90,6 @@ const rsvpsReducer = (state = initialState, action) => {
         ...state,
         [action.rsvp.id]: action.rsvp,
       };
-      console.log(newState, "<==============")
       return newState;
     case CANCEL:
       newState = {...state}

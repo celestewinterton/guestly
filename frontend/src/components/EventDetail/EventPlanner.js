@@ -42,7 +42,7 @@ function EventPlanner({event}) {
           </ul>
         </div>
         <div className='large-card-nav'>
-            <NavLink className='nav-button' to="">Guestlist</NavLink>
+            {/* <NavLink className='nav-button' to="">Guestlist</NavLink> */}
             {/* <NavLink className='nav-button' to="">Seating</NavLink> */}
             {/* <NavLink className='nav-button' to="">Registry</NavLink> */}
         </div>

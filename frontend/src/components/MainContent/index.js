@@ -8,7 +8,6 @@ import EventCard from '../EventCard';
 import RSVPCard from '../RSVPCard';
 import { Route } from 'react-router';
 import { Modal } from '../../context/Modal';
-import Search from '../Search'
 import SearchInput from '../Search/SearchInput'
 
 function MainContent({isLoaded}) {

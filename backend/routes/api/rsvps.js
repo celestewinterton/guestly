@@ -30,6 +30,7 @@ router.post('/', requireAuth, asyncHandler(async (req, res) => {
 router.put('/:id(\\d+)', asyncHandler(async function (req, res) {
   const rsvp = await RSVP.findByPk(req.params.id);
   const updatedRsvp = await rsvp.update(req.body);
+  console.log(req.params.rsvpId)
   return res.json(updatedRsvp);
 }));
 
