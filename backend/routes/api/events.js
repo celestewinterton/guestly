@@ -7,6 +7,17 @@ const { User, Event, Venue, RSVP, Table, Seat } = require('../../db/models');
 
 const router = express.Router();
 
+const validateEvent = [
+  check('name')
+    .exists({ checkFalsy: true })
+    .isLength({ min: 4 })
+    .withMessage('Please provide an event name greater than 4 characters'),
+  check('date')
+    .exists({ checkFalsy: true })
+    .withMessage('Please select the date for your event'),
+  handleValidationErrors
+]
+
 router.get('/', asyncHandler(async (req, res) => {
   const events = await Event.findAll({
     include: [Venue, User, RSVP],
@@ -24,7 +35,7 @@ router.get('/:id(\\d+)', requireAuth, asyncHandler(async (req, res) => {
   return res.json({events})
 }));
 
-router.post('/', requireAuth , asyncHandler(async (req, res) => {
+router.post('/', requireAuth , validateEvent, asyncHandler(async (req, res) => {
   const { name, date, details, dresscode } = req.body;
   const userId = req.user.id;
 
@@ -35,7 +46,7 @@ router.post('/', requireAuth , asyncHandler(async (req, res) => {
   return res.json(event);
 }));
 
-router.put('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) {
+router.put('/:id(\\d+)', validateEvent, requireAuth, asyncHandler(async function (req, res) {
   const event = await Event.findByPk(req.params.id);
   const newEvent = await event.update(req.body);
   return res.json(newEvent);

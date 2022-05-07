@@ -30,23 +30,21 @@ function EventEditForm() {
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
-    const errors = [];
-    if (!name.length) errors.push('Please enter your Name');
-    setErrors(errors);
-  }, [dispatch, name])
+  }, [dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrors([]);
-    setHasSubmitted(true);
-
-    const payload = {...event, name, date, details, dresscode, image}
-    await dispatch(eventActions.editEvent(payload));
-
-    history.push("/events")
-    setName('');
-    setErrors([]);
-    setHasSubmitted(false);
+    if (name.length && date) {
+      setErrors([]);
+      const payload = {...event, name, date, details, dresscode, image}
+      return await dispatch(eventActions.editEvent(payload))
+        .then(() => history.push("/events"))
+        .catch(async (res) => {
+          const data = await res.json();
+          if (data && data.errors) setErrors(data.errors);
+        });
+    }
+    return setErrors(['Event name and date are required']);
   };
 
   const handleDelete = (e) => {

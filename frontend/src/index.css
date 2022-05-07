@@ -36,10 +36,7 @@ ul {
 
 .error {
   color: red;
-  min-height: 24px;
-  min-width: 360px;
   margin: 0 0 10px 0;
-  padding: 0 8px;
   font-size: 12px;
   list-style: disc;
 }

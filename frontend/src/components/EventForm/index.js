@@ -21,24 +21,19 @@ function EventForm() {
   const [errors, setErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
-  useEffect(() => {
-    const errors = [];
-    if (!name.length) errors.push('Please enter your Name');
-    setErrors(errors);
-  }, [name])
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setErrors([]);
-    setHasSubmitted(true);
-
-    const payload = {name, date, details, dresscode}
-    await dispatch(eventActions.createNewEvent(payload));
-
-    history.push("/events")
-    setName('');
-    setErrors([]);
-    setHasSubmitted(false);
+    if (name.length && date) {
+      setErrors([]);
+      const payload = {name, date, details, dresscode}
+      return await dispatch(eventActions.createNewEvent(payload))
+        .then(() => history.push("/events"))
+        .catch(async (res) => {
+          const data = await res.json();
+          if (data && data.errors) setErrors(data.errors);
+        });
+    }
+    return setErrors(['Event name and date are required']);
   };
 
   if (!sessionUser) return <Redirect to="/" />;
