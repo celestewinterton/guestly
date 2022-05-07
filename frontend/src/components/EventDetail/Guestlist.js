@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, useLocation } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import * as rsvpActions from '../../store/rsvps';
 import url from '../MainContent/images/proposal.jpeg';
@@ -12,7 +12,7 @@ function Guestlist({event}) {
   const rsvps = useSelector(state => state.rsvps);
   const history = useHistory();
   const {eventId} = useParams();
-  console.log(rsvps)
+  const eventRsvps = Object.values(rsvps)?.filter(rsvp => rsvp?.eventId === event.id);
 
   useEffect(() => {
     dispatch(rsvpActions.showRSVPs(rsvps));
@@ -26,8 +26,8 @@ function Guestlist({event}) {
 
   return (
     <div className='center'>
-      <div className='large-card'>
-        <div className='large-card-main'>
+      <div className='large-card large-card-guest-grid'>
+        <div>
           <table className='guestlist-table'>
             <thead><h2>{event?.name} Guestlist</h2>
               <tr>
@@ -38,7 +38,7 @@ function Guestlist({event}) {
                 <th>Count</th>
               </tr>
             </thead>
-                {Object.values(rsvps)?.map(rsvp =>
+                {eventRsvps?.map(rsvp =>
                 <tbody>
                   <td>{rsvp?.User?.fullname}</td>
                   <td>{rsvp?.plusOne}</td>

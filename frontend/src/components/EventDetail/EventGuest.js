@@ -41,7 +41,7 @@ function EventGuest() {
 
   return (
     <div className='center'>
-      <div className='large-card'>
+      <div className='large-card large-card-grid'>
         <div className='large-card-image'>
           <img className='event-image-format' src={event?.image ? event.image : url} alt='Wedding'></img>
         </div>

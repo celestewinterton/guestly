@@ -61,7 +61,6 @@ module.exports = {
         image: "https://user-images.githubusercontent.com/96894806/167048755-bc63428a-7229-4d62-b5b6-9812d2ea1539.jpeg",
         userId: 4
       }
-
     ], {});
   },
 

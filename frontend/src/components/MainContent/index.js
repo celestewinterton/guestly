@@ -26,18 +26,32 @@ function MainContent({isLoaded}) {
     <div className='main-content-container'>
       <h2>Upcoming Events!</h2>
       <div>
-        {events ? <div><h3 className=''>Planning</h3><div>{
+        {events ? <div>
+          <div className='main-page-header'>
+            <h3 className=''>Planning</h3>
+            <NavLink to='/events/new'>
+              <div className='muted'>
+                <button className='submit-button'>Plan an Event</button>
+              </div>
+            </NavLink>
+          </div>
+        <div>{
         Object.values(events).map(event => <EventCard key={event?.id} event={event} />
         )}</div>
-          <NavLink to='/events/new'>
-            <div className='muted'>
-              <a className='link center'>Plan a new event!</a>
-            </div>
-          </NavLink>
         </div> : null}
       </div>
       <div>
-        {rsvps && events ? <div><h3>Attending</h3><div>{
+        {rsvps && events ? <div>
+          <div className='main-page-header'>
+            <h3>Attending</h3>
+            <button className='submit-button' onClick={() => setShowModal(true)}>Find an Event</button>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                <SearchInput />
+              </Modal>
+            )}
+          </div>
+        <div>{
         Object.values(rsvps).map(rsvp => <RSVPCard key={rsvp.id} rsvp={rsvp} />
         )}</div></div> : null}
       </div>
