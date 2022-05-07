@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import SignupForm from '../SignupFormModal/SignupForm';
+import SignupFormModal from '../SignupFormModal';
+import SearchInput from '../Search/SearchInput'
 
 import './SplashPage.css'
 
-function SplashPage() {
+function SplashPage({isLoaded}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <div className='splash'>
       <div className='splash-card'>
-        <form className='splash-form'>
-          <h2>Want your guests to choose their own seating?</h2>
-          <div className='space'>Sign up for Guestly today so you can skip the seating charts!</div>
-          <div className='space'>Guestly allows you your guests to RSVP, select seating, and view your registry all in one place.</div>
-          <button onClick={() => setShowModal(true)} className='splash-button'>Start Planning!</button>
-          {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-              <SignupForm />
-            </Modal>
-          )}
-          <button className='splash-button'>Attending a wedding? RSVP here!
-          </button>
-        </form>
+          <div className='splash-text-container'>
+            <h2>Want your guests to <br/>choose their own seating?</h2>
+            <div className='space'>Sign up for Guestly today so you can <br/>skip the seating charts!</div>
+            <div className='space'>Guestly allows you your guests to RSVP, <br/>select seating, and view your registry all <br/>in one place.</div>
+          </div>
+          <div className='splash-button-container'>
+            <div onClick={() => setShowModal(true)} className='teal-button full-button'>Getting Started!</div>
+            {showModal && (
+              <Modal onClose={() => setShowModal(false)}>
+                <SignupForm />
+              </Modal>
+            )}
+            <div className='muted'>Attending a wedding? Create an account to RSVP!</div>
+        </div>
       </div>
     </div>
   )

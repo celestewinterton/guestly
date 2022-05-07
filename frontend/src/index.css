@@ -59,7 +59,7 @@ ul {
   margin-top: 100px;
 }
 
-.large-card, form, .card {
+.large-card, form, .card, .splash-card {
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.25);
 }
 
@@ -98,7 +98,7 @@ form > button {
 }
 
 .button-margin {
-  margin: .5em .0em .5em 0em;
+  margin: .5em .0em .5em .5em;
 }
 
 .submit-button:hover,

@@ -14,7 +14,27 @@
   flex-direction: column;
   align-items: flex-end;
   margin: 5vh;
+  background-color: #F8F2EE;
   margin-left: 40vw;
+  padding: 30px 60px 40px 60px;
+  /* max-width: 350px; */
+
+}
+
+.full-button {
+  margin: .5em .0em .5em .0em;
+  text-align: center;
+}
+
+.splash-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.splash-text-container {
+  display: flex;
+  flex-direction: column;
 }
 
 /* .page-content {

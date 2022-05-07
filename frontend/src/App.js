@@ -27,7 +27,7 @@ function App() {
         {isLoaded && (
           <Switch>
             <Route exact path="/">
-              <SplashPage />
+              <SplashPage isLoaded={isLoaded} />
             </Route>
             <Route path="/events/new">
               <EventForm />
