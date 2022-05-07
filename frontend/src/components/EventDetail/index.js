@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, NavLink, Redirect } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import EventGuest from './EventGuest';
 import EventPlanner from './EventPlanner';
@@ -22,6 +22,8 @@ function EventDetail() {
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
   }, [dispatch])
+
+  if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <div>

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import "./MainContent.css"
 import * as eventActions from '../../store/events';
 import * as rsvpActions from '../../store/rsvps';
@@ -21,6 +21,8 @@ function MainContent({isLoaded}) {
     dispatch(eventActions.showAllEvents(events));
     dispatch(rsvpActions.showRSVPs(rsvps));
   }, [dispatch])
+
+  if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <div className='main-content-container'>

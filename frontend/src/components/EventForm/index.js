@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
+import React, { useState, useEffect } from 'react';
+import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import * as eventActions from '../../store/events';
+import { Redirect } from 'react-router-dom'
 
 function EventForm() {
   const sessionUser = useSelector(state => state.session.user);
@@ -39,6 +40,8 @@ function EventForm() {
     setErrors([]);
     setHasSubmitted(false);
   };
+
+  if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <div className="center">

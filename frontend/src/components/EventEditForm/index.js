@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { NavLink, useParams } from 'react-router-dom';
+import { NavLink, useParams, Redirect } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import url from '../MainContent/images/proposal.jpeg';
 import { useHistory } from 'react-router';
@@ -54,6 +54,8 @@ function EventEditForm() {
     dispatch(eventActions.cancelCurrentEvent(eventId));
     history.push("/events")
   }
+
+  if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <div className="center">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
 import * as rsvpActions from '../../store/rsvps';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Redirect } from 'react-router-dom';
 
 const diets = ['', 'Vegetarian', 'Vegan', 'Gluten-free', 'Allergy (please specify in notes below)']
 
@@ -39,6 +39,8 @@ function RSVPEditForm() {
     setErrors([]);
     setHasSubmitted(false);
   };
+
+  if (!sessionUser) return <Redirect to="/" />;
 
   return (
     <div className="center">

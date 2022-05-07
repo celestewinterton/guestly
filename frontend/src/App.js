@@ -65,7 +65,10 @@ function App() {
               {/* <About /> */}
             </Route>
             <Route>
-              <h2>Page Not Found</h2>
+              <div className="text-center">
+                <h2>Page Not Found</h2>
+                <div>Please log in to start planning an event or to RSVP!</div>
+              </div>
             </Route>
           </Switch>
         )}
