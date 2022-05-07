@@ -3,11 +3,16 @@ import { Modal } from '../../context/Modal';
 import SignupForm from '../SignupFormModal/SignupForm';
 import SignupFormModal from '../SignupFormModal';
 import SearchInput from '../Search/SearchInput'
+import { Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './SplashPage.css'
 
 function SplashPage({isLoaded}) {
+  const sessionUser = useSelector((state) => state.session.user);
   const [showModal, setShowModal] = useState(false);
+
+  if (sessionUser) return <Redirect to="/events" />;
 
   return (
     <div className='splash'>

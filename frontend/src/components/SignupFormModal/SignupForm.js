@@ -22,12 +22,11 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      await dispatch(sessionActions.signup({ fullname, email, username, password }))
+      return dispatch(sessionActions.signup({ email, username, password }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
         });
-      history.push("/events")
     }
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
