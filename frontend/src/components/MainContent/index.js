@@ -31,7 +31,7 @@ function MainContent({isLoaded}) {
             <h3 className=''>Planning</h3>
             <NavLink to='/events/new'>
               <div className='muted'>
-                <button className='submit-button'>Plan an Event</button>
+                <button className='submit-button button-margin'>Plan an Event</button>
               </div>
             </NavLink>
           </div>
@@ -44,7 +44,7 @@ function MainContent({isLoaded}) {
         {rsvps && events ? <div>
           <div className='main-page-header'>
             <h3>Attending</h3>
-            <button className='submit-button' onClick={() => setShowModal(true)}>Find an Event</button>
+            <button className='submit-button button-margin' onClick={() => setShowModal(true)}>Find an Event</button>
             {showModal && (
               <Modal onClose={() => setShowModal(false)}>
                 <SearchInput />

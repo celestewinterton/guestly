@@ -97,6 +97,10 @@ form > button {
   border-radius: 5px;
 }
 
+.button-margin {
+  margin: .5em .0em .5em 0em;
+}
+
 .submit-button:hover,
 form > button:hover {
   background-color: teal;
