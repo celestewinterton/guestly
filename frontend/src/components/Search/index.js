@@ -8,8 +8,18 @@ import { NavLink } from 'react-router-dom';
 const Search = ({query, setQuery, setSearchResults}) => {
   const dispatch = useDispatch();
   const events = useSelector(state => state.events)
+  // const eventResults = Object.values(events)?.filter(
+  //   event => event?.name?.toLowerCase().includes(query?.toLowerCase())
+  // );
+
   const eventResults = Object.values(events)?.filter(
     event => event?.name?.toLowerCase().includes(query?.toLowerCase())
+  );
+  const venueResults = Object.values(events)?.filter(
+    event => event?.Venue?.name?.toLowerCase().includes(query?.toLowerCase())
+  );
+  const cityResults = Object.values(events)?.filter(
+    event => event?.Venue?.city?.toLowerCase().includes(query?.toLowerCase())
   );
 
   const formatResult = result => {
@@ -42,19 +52,37 @@ const Search = ({query, setQuery, setSearchResults}) => {
                   setSearchResults(false)
                   setQuery('')
                   }}>
-                  {formatResult(event.name)}
+                  {formatResult(`${event?.name}, ${event?.Venue?.city} ${event?.Venue?.state}`)}
                 </NavLink>
               </div>
             </li>)
           : <div className='muted'>No results were found</div> }</ul>
         <h4>Venues</h4>
-          <ul>
-            <li className='muted'>Location-based search is currently not active, please check back later</li>
-          </ul>
+        <ul>{venueResults.length ? venueResults.map(event =>
+            <li key={`event-${event.id}`}>
+              <div className='search-results-li'>
+                <NavLink className='unset link search-result-text' to={`/events/${event.id}`} onClick={e => {
+                  setSearchResults(false)
+                  setQuery('')
+                  }}>
+                  {formatResult(`${event?.name}, ${event.Venue?.name}`)}
+                </NavLink>
+              </div>
+            </li>)
+          : <div className='muted'>No results were found</div> }</ul>
         <h4>Locations</h4>
-          <ul>
-            <li className='muted'>Location-based search is currently not active, please check back later</li>
-          </ul>
+        <ul>{cityResults.length ? cityResults.map(event =>
+            <li key={`event-${event.id}`}>
+              <div className='search-results-li'>
+                <NavLink className='unset link search-result-text' to={`/events/${event.id}`} onClick={e => {
+                  setSearchResults(false)
+                  setQuery('')
+                  }}>
+                  {formatResult(`${event?.name}, ${event?.Venue?.city}`)}
+                </NavLink>
+              </div>
+            </li>)
+          : <div className='muted'>No results were found</div> }</ul>
       </div>
     </div>
   )
