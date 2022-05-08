@@ -8,7 +8,7 @@ const { User } = require('../../db/models');
 const router = express.Router();
 
 const validateSignup = [
-  check('firstName')
+  check('fullname')
     .exists({ checkFalsy: true })
     .isLength({ min: 4 })
     .withMessage('Please provide a full name with at least 4 characters.'),
