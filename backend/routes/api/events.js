@@ -37,11 +37,11 @@ router.get('/', asyncHandler(async (req, res) => {
 // }));
 
 router.post('/', requireAuth , validateEvent, asyncHandler(async (req, res) => {
-  const { name, date, details, dresscode } = req.body;
+  const { name, date, details, dresscode, venueId } = req.body;
   const userId = req.user.id;
 
   const event = await Event.create({
-    name, date, details, dresscode, userId,
+    name, date, details, dresscode, userId, venueId
   });
 
   return res.json(event);
@@ -64,9 +64,6 @@ router.delete('/:id(\\d+)', requireAuth, asyncHandler(async function (req, res) 
 router.get('/:id/tables', requireAuth, asyncHandler(async (req, res) => {
   const userId = req.user.id;
   const eventId = req.params.id;
-  console.log("========================================")
-  console.log("====================>", eventId, userId)
-  console.log("========================================")
 
   const tables = await Table.findAll({
     where: {eventId},

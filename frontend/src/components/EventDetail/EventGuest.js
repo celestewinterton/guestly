@@ -50,7 +50,7 @@ function EventGuest() {
             <li><h2><NavLink className="unset" to={`/events/${event?.id}`}>{event?.name}</NavLink></h2></li>
             <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
             <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "TBD"}</li>
-            <li className='muted'>Address: {event?.Venue ?
+            <li className='muted'>Address: {(event?.Venue && event?.Venue?.address) ?
             <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
             : "TBD"}</li>
             <li className='muted'><br/>Details: {event?.details}</li>

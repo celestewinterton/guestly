@@ -19,25 +19,15 @@ function RSVPEditForm() {
   const [plusOneDietary, setPlusOneDietary] = useState(rsvp?.plusOneDietary);
   const [notes, setNotes] = useState(rsvp?.notes);
   const [errors, setErrors] = useState([]);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-
-  useEffect(() => {
-    const errors = [];
-    // if (name.length < 3) errors.push('Please enter your Name');
-    setErrors(errors);
-  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setHasSubmitted(true);
 
     const payload = {plusOne, plusOneDietary, selfDietary, notes, eventId, rsvpId};
     await dispatch(rsvpActions.editRSVP(payload));
 
     history.push(`/rsvps/${rsvpId}`)
-    // setName('');
     setErrors([]);
-    setHasSubmitted(false);
   };
 
   if (!sessionUser) return <Redirect to="/" />;

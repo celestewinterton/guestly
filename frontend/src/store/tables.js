@@ -10,11 +10,12 @@ export const show = tables => ({
   payload: tables
 })
 
-export const showTables = (tables) => async dispatch => {
-  const response = await csrfFetch(`/api/events/${tables.eventId}`, {
+export const showTables = () => async dispatch => {
+  const id = 1
+  const response = await csrfFetch(`/api/events/${id}`, {
     method: 'GET'
   })
-
+  console.log(response, id, "<=======")
   if (response.ok) {
     const tables = await response.json();
     dispatch(show(tables));

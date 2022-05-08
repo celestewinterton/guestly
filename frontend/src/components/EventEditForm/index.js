@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { NavLink, useParams, Redirect } from 'react-router-dom';
 import * as eventActions from '../../store/events';
+import * as venueActions from '../../store/venues';
 import url from '../MainContent/images/proposal.jpeg';
 import { useHistory } from 'react-router';
 import Calendar from 'react-calendar';
@@ -14,30 +15,35 @@ function EventEditForm() {
   const events = useSelector(state => state.events)
   const event = Object.values(events)?.find(event => event.id === parseInt(eventId))
   let myEvent = event?.userId === sessionUser?.id
+  const venues = useSelector(state => state.venues)
 
   const [name, setName] = useState(event?.name);
   const [date, setDate] = useState((`${event?.date}`).slice(0, 10));
   const [details, setDetails] = useState(event?.details);
   const [dresscode, setDresscode] = useState(event?.dresscode);
   const [image, setImage] = useState(event?.image);
-  const [venue, setVenue] = useState("");
+  const [venueId, setVenueId] = useState(event?.venueId);
   const [venueStreet, setVenueStreet] = useState("");
   const [venueCity, setVenueCity] = useState("");
   const [venueState, setVenueState] = useState("");
   const [venueZip, setVenueZip] = useState("");
   const [errors, setErrors] = useState([]);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
+  // const venueId = venue.id;
+  console.log("=========>", venueId)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
+    dispatch(venueActions.showVenues(venues));
   }, [dispatch])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (name.length && date) {
       setErrors([]);
-      const payload = {...event, name, date, details, dresscode, image}
-      return await dispatch(eventActions.editEvent(payload))
+      // const venuePayload = {...venue, eventId}
+      // await dispatch(venueActions.editVenue(venuePayload))
+      const eventPayload = {...event, name, date, details, dresscode, image, venueId}
+      return await dispatch(eventActions.editEvent(eventPayload))
         .then(() => history.push("/events"))
         .catch(async (res) => {
           const data = await res.json();
@@ -82,6 +88,16 @@ function EventEditForm() {
               onChange={(e) => setDate(e.target.value)}
               required
             />
+          </label>
+          <label>
+            Venue
+            <select
+              className='input'
+              value={venueId}
+              onChange={(e) => setVenueId(e.target.value)}
+            >{Object.values(venues)?.map(venue => (
+              <option key={venue.id} value={venue.id}>{venue.name}</option>
+            ))}</select>
           </label>
           <label>
             Details

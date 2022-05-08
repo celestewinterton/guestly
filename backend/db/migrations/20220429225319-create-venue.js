@@ -23,6 +23,9 @@ module.exports = {
       zipcode: {
         type: Sequelize.STRING(50)
       },
+      link: {
+        type: Sequelize.STRING(255)
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

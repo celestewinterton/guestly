@@ -3,11 +3,15 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import eventsReducer from './events';
 import rsvpsReducer from './rsvps';
+import tableReducer from './tables';
+import venueReducer from './venues';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   events: eventsReducer,
-  rsvps: rsvpsReducer
+  rsvps: rsvpsReducer,
+  tables: tableReducer,
+  venues: venueReducer
 });
 
 let enhancer;

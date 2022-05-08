@@ -27,7 +27,7 @@ function RSVPCard({rsvp}) {
             <li><h3>{event?.name}</h3></li>
             <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
             <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "Coming soon"}</li>
-            <li className='muted'>Address: {event?.Venue ?
+            <li className='muted'>Address: {(event?.Venue && event?.Venue?.address) ?
             <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
             : "Coming soon"}</li>
             <li className='muted'>{rsvp?.plusOne ? <>+ 1: {rsvp?.plusOne}</> : null}</li>

@@ -11,11 +11,6 @@ module.exports = {
     }, {
       selfDietary: "None",
       plusOneDietary: "None",
-      userId: 2,
-      eventId: 1,
-    }, {
-      selfDietary: "None",
-      plusOneDietary: "None",
       userId: 3,
       eventId: 1,
     }, {
@@ -60,11 +55,6 @@ module.exports = {
       plusOneDietary: "None",
       userId: 2,
       eventId: 3,
-    }, {
-      selfDietary: "None",
-      plusOneDietary: "None",
-      userId: 1,
-      eventId: 4,
     }, {
       selfDietary: "Haider Karim",
       plusOneDietary: "None",

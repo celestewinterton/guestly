@@ -21,7 +21,7 @@ function EventCard({event}) {
             <li><h3><NavLink className="unset" to={`/events/${event.id}`}>{event?.name}</NavLink></h3></li>
             <li className='muted'>Date: {event?.date.slice(0, 10)}</li>
             <li className='muted'>Venue: {event?.Venue ? event?.Venue?.name : "Coming soon"}</li>
-            <li className='muted'>Address: {event?.Venue ?
+            <li className='muted'>Address: {(event?.Venue && event?.Venue?.address) ?
             <>{event?.Venue?.address} <br/>{event?.Venue?.city}, {event?.Venue?.state} {event?.Venue?.zipcode}</>
             : "Coming soon"}</li>
           </ul>

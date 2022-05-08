@@ -32,7 +32,10 @@ function SeatingConfig({event}) {
         <div className='large-card-main'>
           <h2>{event?.name} Seating Chart</h2>
             <div className='seating-area'>
+              {/* {Object.values(tables)?.map(table => {
+                <div>Table {table.id}</div>
 
+              })} */}
 
 
 

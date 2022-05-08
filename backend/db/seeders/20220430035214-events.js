@@ -19,15 +19,17 @@ module.exports = {
         dresscode: "Dressy-Casual",
         numberOfTables: 4,
         image: "https://user-images.githubusercontent.com/96894806/167024480-122809cf-3015-4af2-b239-9150359e132c.jpeg",
-        userId: 5
+        userId: 5,
+        venueId: 3
       }, {
-        name: "Steph's Wedding!",
+        name: "Amy and Rory's Vow Renewal",
         date: "2023-04-23",
         details: "Save the Date!",
-        dresscode: "Semi-Formal",
+        dresscode: "Bow ties and fez's where possible please!",
         numberOfTables: 12,
         image: "https://user-images.githubusercontent.com/96894806/167024538-4873ed66-72d9-4b4b-b80a-a7f136547689.jpeg",
-        userId: 7
+        userId: 7,
+        venueId: 5
       }, {
         name: "Demo Wedding",
         date: "2023-04-30",
@@ -35,31 +37,35 @@ module.exports = {
         dresscode: "Cocktail-Formal",
         numberOfTables: 10,
         image: "https://user-images.githubusercontent.com/96894806/167048731-55f4334e-1959-4f66-9f83-f60e64d2c109.jpeg",
-        userId: 1
+        userId: 1,
+        venueId: 6
       }, {
         name: "Katie and John",
         date: "2023-09-30",
         details: "More details to come!!!",
-        dresscode: "Cocktail-Formal",
+        dresscode: "Semi-Formal",
         numberOfTables: 8,
         image: "https://user-images.githubusercontent.com/96894806/167024522-8d30889e-dacf-4aec-947c-785d938c12de.jpeg",
-        userId: 4
+        userId: 4,
+        venueId: 7
       }, {
-        name: "Kelly & Adam",
+        name: "Martha and Mickey",
         date: "2024-02-05",
-        details: "TBD",
+        details: "Taking a break from defending the earth from aliens to get married!",
         dresscode: "Semi-Formal",
         numberOfTables: 12,
         image: "https://user-images.githubusercontent.com/96894806/167024548-364a0cf2-e6c1-42a7-8a02-192a318490ed.jpeg",
-        userId: 4
+        userId: 4,
+        venueId: 9
       }, {
-        name: "Tyler & Amy",
+        name: "Clara and Danny",
         date: "2022-11-05",
-        details: "TBD",
+        details: "",
         dresscode: "Formal",
         numberOfTables: 15,
         image: "https://user-images.githubusercontent.com/96894806/167048755-bc63428a-7229-4d62-b5b6-9812d2ea1539.jpeg",
-        userId: 4
+        userId: 4,
+        venueId: 8
       }
     ], {});
   },
