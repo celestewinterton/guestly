@@ -1,6 +1,6 @@
 # Guestly
 
-An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> where users can RSVP and select seating at their next wedding reception. For users planning their big day, this app is a one stop shop to view your guestlist and your seating arrangements. 
+An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> where users can RSVP to <!--and select seating at--> their next wedding reception. For users planning their big day, this app is a one stop shop to view your guestlist and your seating arrangements (seating coming soon). 
 
 <a href="https://seat-me-guestly.herokuapp.com/" target="_blank"><strong>Explore the website »</strong></a>
 
@@ -9,6 +9,7 @@ An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> w
   <ol>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#features">Features</a></li>
+    <li><a href="#database-schema">Database Schema</a></li>
     <li><a href="#future-features">Future Features</a></li>
   </ol>
  </details>
