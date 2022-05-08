@@ -21,10 +21,6 @@ module.exports = {
         type: Sequelize.INTEGER,
         references: {model: "Events"}
       },
-      userId: {
-        type: Sequelize.INTEGER,
-        references: {model: "Users"}
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

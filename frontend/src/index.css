@@ -56,7 +56,7 @@ ul {
   margin-top: 100px;
 }
 
-.large-card, form, .card, .splash-card {
+.large-card, form, .card, .splash-card, .large-card-seating {
   box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.25);
 }
 
@@ -92,7 +92,7 @@ form > button {
   margin: .5em .5em .5em 0em;
   color: white;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .button-margin {

@@ -41,16 +41,16 @@ function EventDetail() {
               setShowSeating(false)
             }}>Guestlist</button>
             {/* HIDE LATER */}
-            <button className='nav-button' onClick={() => {
+            {/* <button className='nav-button' onClick={() => {
               setShowEvent(false)
               setShowGuests(false)
               setShowSeating(true)
-            }}>Seating</button>
+            }}>Seating</button> */}
         </div>
         {showEvent && <EventPlanner event={event}/>}
         {showGuests && <Guestlist event={event}/>}
         {/* HIDE LATER */}
-        {showSeating && <SeatingConfig event={event}/>}
+        {/* {showSeating && <SeatingConfig event={event}/>} */}
       </>
       :
       <>

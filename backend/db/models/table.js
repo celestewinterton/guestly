@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     tableShape: DataTypes.STRING,
     placement: DataTypes.STRING,
     eventId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
   }, {});
   Table.associate = function(models) {
     // associations can be defined here

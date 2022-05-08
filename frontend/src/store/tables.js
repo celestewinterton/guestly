@@ -10,25 +10,25 @@ export const show = tables => ({
   payload: tables
 })
 
-export const showTables = () => async dispatch => {
+export const showTables = (tables, eventId) => async dispatch => {
   const id = 1
-  const response = await csrfFetch(`/api/events/${id}`, {
+  const response = await csrfFetch(`/api/events/${eventId}/tables`, {
     method: 'GET'
   })
-  console.log(response, id, "<=======")
+
   if (response.ok) {
     const tables = await response.json();
     dispatch(show(tables));
   }
 }
 
-const update = rsvp => ({
+const update = table => ({
   type: CREATE,
-  rsvp
+  table
 })
 
 export const createTable = (newTable) => async dispatch => {
-  const response = await csrfFetch(`/api/rsvps`, {
+  const response = await csrfFetch(`/api/events/${newTable.eventId}/tables`, {
     method: 'POST',
     headers: {'ContentType': 'application/json'},
     body: JSON.stringify(newTable)
