@@ -124,6 +124,7 @@ function EventEditForm() {
             />
           </label>
           <button type="submit">Save</button>
+          <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
         </form>
           {/* <button className="link unset right-bottom" onClick={handleDelete}>Cancel Event</button> */}
       </div>

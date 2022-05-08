@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
 import * as rsvpActions from '../../store/rsvps';
-import { useLocation, Redirect } from 'react-router-dom';
+import { useLocation, Redirect, NavLink } from 'react-router-dom';
 
 const diets = ['', 'Vegetarian', 'Vegan', 'Gluten-free', 'Allergy (please specify in notes below)']
 
@@ -76,6 +76,7 @@ function RSVPEditForm() {
             />
           </label>
           <button type="submit">Update RSVP</button>
+          <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
         </form>
       </div>
     </div>

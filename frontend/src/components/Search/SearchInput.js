@@ -25,6 +25,7 @@ function SearchInput({ isLoaded }){
           onChange={e=>setQuery(e.target.value)}
           onClick={e => e.stopPropagation}/>
           {searchResults && <Search query={query} setQuery={setQuery} setSearchResults={setSearchResults}/>}
+      {/* <div className='link right-bottom'><NavLink className="unset center" to={`/events`}>Back to Events »</NavLink></div> */}
       </div>}
     </div>
   )

@@ -3,7 +3,7 @@ import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import * as eventActions from '../../store/events';
-import { Redirect } from 'react-router-dom'
+import { Redirect, NavLink } from 'react-router-dom'
 
 function EventForm() {
   const sessionUser = useSelector(state => state.session.user);
@@ -83,6 +83,7 @@ function EventForm() {
             />
           </label>
           <button type="submit">Save</button>
+          <a className='link right-bottom'><NavLink className="unset" to={`/events`}>Back to Events »</NavLink></a>
         </form>
       </div>
     </div>
