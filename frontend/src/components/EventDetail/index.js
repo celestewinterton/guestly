@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { useParams, NavLink, Redirect } from 'react-router-dom';
+import { useParams, Redirect } from 'react-router-dom';
 import * as eventActions from '../../store/events';
 import EventGuest from './EventGuest';
 import EventPlanner from './EventPlanner';
@@ -40,15 +40,17 @@ function EventDetail() {
               setShowGuests(true)
               setShowSeating(false)
             }}>Guestlist</button>
-            {/* <button className='nav-button' onClick={() => {
+            {/* HIDE LATER */}
+            <button className='nav-button' onClick={() => {
               setShowEvent(false)
               setShowGuests(false)
               setShowSeating(true)
-            }}>Seating</button> */}
+            }}>Seating</button>
         </div>
         {showEvent && <EventPlanner event={event}/>}
         {showGuests && <Guestlist event={event}/>}
-        {/* {showSeating && <SeatingConfig event={event}/>} */}
+        {/* HIDE LATER */}
+        {showSeating && <SeatingConfig event={event}/>}
       </>
       :
       <>

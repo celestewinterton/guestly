@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Seat = sequelize.define('Seat', {
     selection: DataTypes.STRING,
     tableId: DataTypes.INTEGER,
-    userId: DataTypes.INTEGER
+    rsvpId: DataTypes.INTEGER
   }, {});
   Seat.associate = function(models) {
     // associations can be defined here

@@ -9,16 +9,38 @@ module.exports = {
       userId: 1,
       eventId: 1,
     }, {
-      plusOne: "Haider Karim",
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 2,
+      eventId: 1,
+    }, {
+      selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 3,
       eventId: 1,
     }, {
       plusOne: "Alex Clatterbuck",
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 4,
+      eventId: 1,
+    }, {
+      plusOne: "Alex Clatterbuck",
+      selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 5,
+      eventId: 1,
+    }, {
+      plusOne: "Alex Clatterbuck",
+      selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 6,
+      eventId: 1,
+    }, {
+      plusOne: "Alex Clatterbuck",
+      selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 7,
       eventId: 1,
     }, {
       plusOne: "Alex Clatterbuck",
@@ -39,8 +61,12 @@ module.exports = {
       userId: 2,
       eventId: 3,
     }, {
-      plusOne: "Haider Karim",
       selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 1,
+      eventId: 4,
+    }, {
+      selfDietary: "Haider Karim",
       plusOneDietary: "None",
       userId: 2,
       eventId: 4,
@@ -65,6 +91,11 @@ module.exports = {
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 5,
+      eventId: 4,
+    }, {
+      selfDietary: "None",
+      plusOneDietary: "None",
+      userId: 7,
       eventId: 4,
     }, {
       selfDietary: "None",

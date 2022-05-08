@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Table.associate = function(models) {
     // associations can be defined here
-    Table.belongsTo(models.Event, {foreignKey: "tableId", onDelete: 'CASCADE'} )
+    Table.belongsTo(models.Event, {foreignKey: "eventId", onDelete: 'CASCADE'} )
     Table.hasMany(models.Seat, {foreignKey: "tableId"})
   };
   return Table;
