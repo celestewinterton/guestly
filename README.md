@@ -31,7 +31,7 @@ An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> w
 
     `git clone git@github.com:celestewinterton/guestly.git`
 
-2. CD into the frontend and backend directeries to install all dependencies
+2. CD into the frontend and backend folders to install all dependencies
 
     `npm install`
 
@@ -114,4 +114,4 @@ Users have a calendar view where they can click dates and see if there are event
   * Planner would be able to create, edit and delete items on the registry and guests would have read access
 
 ### Drag and Drop Visual Seating Configuration
-  * To make the seating charts more intuitive, a drag-and-drop feature for tables would be enable Planners to shwo a more accurate representation of the space and provide more visibility to guests when selecting seating. 
+  * To make the seating charts more intuitive, a drag-and-drop feature for tables would be enable Planners to show a more accurate representation of the space and provide more visibility to guests when selecting seating. 
