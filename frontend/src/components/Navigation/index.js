@@ -6,6 +6,7 @@ import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import Search from '../Search';
 import './Navigation.css';
+import AboutModal from '../AboutModal';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -59,6 +60,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         {/* <NavLink className="nav-button" exact to="/">Home</NavLink> */}
+        <AboutModal />
         <LoginFormModal />
         <SignupFormModal />
         {/* <NavLink className="nav-button" to="/signup">Sign Up</NavLink> */}

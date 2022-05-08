@@ -20,19 +20,16 @@ module.exports = {
       userId: 4,
       eventId: 1,
     }, {
-      plusOne: "Alex Clatterbuck",
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 5,
       eventId: 1,
     }, {
-      plusOne: "Alex Clatterbuck",
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 6,
       eventId: 1,
     }, {
-      plusOne: "Alex Clatterbuck",
       selfDietary: "None",
       plusOneDietary: "None",
       userId: 7,
