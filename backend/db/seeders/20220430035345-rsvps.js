@@ -56,7 +56,7 @@ module.exports = {
       userId: 2,
       eventId: 3,
     }, {
-      selfDietary: "Haider Karim",
+      selfDietary: "None",
       plusOneDietary: "None",
       userId: 2,
       eventId: 4,
