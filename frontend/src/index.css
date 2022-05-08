@@ -76,6 +76,7 @@ body {
   top: 0px;
   left: 0px;
   right: 0px;
+  bottom: 0px;
   position: absolute;
 }
 
@@ -91,7 +92,7 @@ form > button {
   margin: .5em .5em .5em 0em;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .button-margin {

@@ -70,3 +70,13 @@
   justify-content: space-between;
   padding: 20px 0px 0px 0px;
 }
+
+@media screen and (max-width: 650px) {
+  .card {
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 25em;
+    background-color: #F8F2EE;
+    display: flex;
+  }
+}

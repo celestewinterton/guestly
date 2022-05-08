@@ -43,7 +43,7 @@ const Search = ({query, setQuery, setSearchResults}) => {
     <div className='card'>
       <div className='search-results'
       onClick={e=>e.stopPropagation()}>
-        <h4>Events</h4>
+        <h4>All Events</h4>
           <ul>{eventResults.length ? eventResults.map(event =>
             <li key={`event-${event.id}`}>
               <div className='search-results-li'>
@@ -52,12 +52,12 @@ const Search = ({query, setQuery, setSearchResults}) => {
                   setSearchResults(false)
                   setQuery('')
                   }}>
-                  {formatResult(`${event?.name}, ${event?.Venue?.city} ${event?.Venue?.state}`)}
+                  {event?.Venue?.city ? formatResult(`${event?.name}, ${event?.Venue?.city} ${event?.Venue?.state}`) : formatResult(`${event?.name}, ${event?.Venue?.name}`)}
                 </NavLink>
               </div>
             </li>)
           : <div className='muted'>No results were found</div> }</ul>
-        <h4>Venues</h4>
+        <h4>Events by Venue</h4>
         <ul>{venueResults.length ? venueResults.map(event =>
             <li key={`event-${event.id}`}>
               <div className='search-results-li'>
@@ -70,7 +70,7 @@ const Search = ({query, setQuery, setSearchResults}) => {
               </div>
             </li>)
           : <div className='muted'>No results were found</div> }</ul>
-        <h4>Locations</h4>
+        <h4>Events by City</h4>
         <ul>{cityResults.length ? cityResults.map(event =>
             <li key={`event-${event.id}`}>
               <div className='search-results-li'>
