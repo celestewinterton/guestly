@@ -56,9 +56,24 @@
   margin: 10px;
 }
 
+.large-card-seating {
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80vw;
+  height: 550px;
+  background-color: #F8F2EE;
+  display: grid;
+  grid-template-areas:
+  "nav"
+  "main"
+  "foot-table";
+}
+
 td, th {
   border: 1px solid #CCC;
   padding: 5px;
+  width: 100%;
+  white-space: nowrap;
 }
 
 .table {

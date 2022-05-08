@@ -26,7 +26,7 @@ function Guestlist({event}) {
 
   return (
     <div className='center'>
-      <div className='large-card large-card-guest-grid'>
+      <div className='large-card-seating'>
         <div>
           <table className='guestlist-table'>
             <thead><h2>{event?.name} Guestlist</h2>
