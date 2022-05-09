@@ -20,7 +20,7 @@ function SplashPage({isLoaded}) {
           <div className='splash-text-container'>
             <h2>Want your guests to <br/>choose their own seating?</h2>
             <div className='space'>Sign up for Guestly today so you can <br/>skip the seating charts!</div>
-            <div className='space'>Guestly allows you your guests to RSVP, <br/>select seating, and view your registry all <br/>in one place.</div>
+            <div className='space'>Guestly allows your guests to RSVP, <br/>select seating, and view your registry all <br/>in one place.</div>
           </div>
           <div className='splash-button-container'>
             <div onClick={() => setShowModal(true)} className='teal-button full-button'>Getting Started!</div>
