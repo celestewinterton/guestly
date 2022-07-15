@@ -15,7 +15,7 @@ function SeatingConfig({event}) {
   const tables = useSelector(state => state.tables);
   const history = useHistory();
   const {eventId} = useParams();
-  console.log("tables", tables)
+  // console.log("tables", tables)
 
   useEffect(() => {
     dispatch(rsvpActions.showRSVPs(rsvps));

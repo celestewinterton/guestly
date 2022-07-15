@@ -158,6 +158,11 @@ select {
   padding-left: 4px;
 }
 
+.form-errors {
+  color: red;
+  font-size: .8rem;
+}
+
 /********* large screens ************/
 @media screen and (min-width: 1200px) {
   /* button {

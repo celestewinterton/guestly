@@ -31,9 +31,9 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Log into your account!</h3>
-      <ul>
+      <ul className="form-errors">
         {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
+          <li key={idx}><i class="fa-solid fa-triangle-exclamation"></i><span> </span>{error}</li>
         ))}
       </ul>
       <label>

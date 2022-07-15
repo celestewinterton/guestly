@@ -40,8 +40,8 @@ function SignupForm() {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Sign up for your account!</h3>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+      <ul className="form-errors">
+        {errors.map((error, idx) => <li key={idx}><i class="fa-solid fa-triangle-exclamation"></i><span> </span>{error}</li>)}
       </ul>
       <label> Full Name
         <input

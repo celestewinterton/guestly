@@ -29,7 +29,7 @@ function EventEditForm() {
   const [venueZip, setVenueZip] = useState("");
   const [errors, setErrors] = useState([]);
   // const venueId = venue.id;
-  console.log("=========>", venueId)
+  // console.log("=========>", venueId)
 
   useEffect(() => {
     dispatch(eventActions.showAllEvents(events));
