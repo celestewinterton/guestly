@@ -1,4 +1,7 @@
-# Guestly
+# 
+<h1 align="center"><img height="25px" width="25px" src="https://user-images.githubusercontent.com/96894806/172306272-1194bd9a-3c20-47af-8197-1e440911cccc.png" alt=""><img> Guestly</h1>
+
+
 
 An events website inspired by <a href="https://www.meetup.com/">meetup.com</a> where users can RSVP to <!--and select seating at--> their next wedding reception. For users planning their big day, this app is a one stop shop to view your guestlist and your seating arrangements (seating coming soon). 
 
